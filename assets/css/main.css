@@ -1,0 +1,542 @@
+/* ==========================================================================
+   Chapel Hill Expert Survey
+   Design tokens
+   --------------------------------------------------------------------------
+   The survey's own instrument is a positioned point on a scale, measured
+   again and again across waves. The recurring motif here is a hairline axis
+   with brass tick marks: used in the hero as the wave timeline, and as the
+   divider between sections.
+
+   Palette: the four blues and the cream are sampled directly from the CHES
+   logo (assets/img/ches-mark.png), so the mark sits on the page without
+   introducing a fifth colour. Brass is the one non-logo accent and is
+   reserved for the axis ticks and the wordmark rule.
+   ========================================================================== */
+
+:root {
+  --ink:        #1B2A33;
+  --ink-soft:   #4E6069;
+  --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
+  --paper:      #F2F2EB;   /* logo cream */
+  --surface:    #FFFFFF;
+  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue-deep:  #2D4B73;   /* logo navy      — link rest */
+  --brass:      #C08D22;   /* graphics only: ticks, rules */
+  --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
+  --rule:       #B7D4DB;   /* logo pale blue, lightened to cream */
+  --rule-soft:  #D8E5E4;
+
+  --display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:    'Libre Franklin', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:    'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --measure: 68ch;
+  --wrap: 1140px;
+  --step: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: #fff;
+  padding: .6rem 1rem;
+  z-index: 100;
+}
+.skip:focus { left: 0; }
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 .6em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.2rem; letter-spacing: -0.005em; }
+
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+
+a {
+  color: var(--blue-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(63,108,166,.35);
+  transition: border-color .15s ease, color .15s ease;
+}
+a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Small mono label — used for eyebrows, metadata, field names.
+   Mono because the survey's working artifacts are codebooks and variable
+   names; the labels read like the data itself. */
+.label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 .7rem;
+}
+
+.lede {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
+ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain li { margin-bottom: .35rem; }
+
+/* --------------------------------------------------------------------------
+   Masthead
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(242,242,235,.94);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 68px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  border: 0;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.wordmark:hover { color: var(--blue-deep); }
+
+/* The logo, small. .wordmark aligns on the baseline for the two text spans,
+   so the image has to opt out of that and centre itself instead. */
+.wordmark-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.wordmark-abbr {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: .1em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--brass);
+}
+.wordmark-full {
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.sitenav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sitenav a {
+  font-size: .84rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border: 0;
+  padding: .35rem 0;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.sitenav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
+.sitenav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--brass);
+}
+.nav-sep { padding-left: 1.35rem; border-left: 1px solid var(--rule); }
+.nav-ext { color: var(--blue-deep) !important; }
+
+.navtoggle {
+  display: none;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  padding: .5rem .8rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .wordmark-full { display: none; }
+  .navtoggle { display: block; }
+  .sitenav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+    display: none;
+    box-shadow: 0 12px 24px -12px rgba(27,42,51,.18);
+  }
+  .sitenav.is-open { display: block; }
+  .sitenav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: .5rem 1.5rem 1.25rem;
+  }
+  .sitenav li { border-bottom: 1px solid var(--rule-soft); }
+  .sitenav a { display: block; padding: .85rem 0; border: 0; }
+  .nav-sep { padding-left: 0; border-left: 0; border-bottom: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+
+section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+section + section { border-top: 1px solid var(--rule-soft); }
+
+.hero { padding-block: clamp(3.5rem, 9vw, 7rem) clamp(2.5rem, 5vw, 4rem); }
+.hero h1 { max-width: 22ch; margin-bottom: 1.2rem; }
+
+.pagehead {
+  padding-block: clamp(2.75rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.pagehead h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); max-width: 26ch; }
+
+/* --------------------------------------------------------------------------
+   SIGNATURE: the wave axis
+   A hairline rule with brass ticks, one per survey wave. Order and spacing
+   carry real information here — these are the actual fielding years.
+   -------------------------------------------------------------------------- */
+
+.axis {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--rule);
+  position: relative;
+}
+
+.axis-track {
+  display: flex;
+  align-items: flex-start;
+  gap: .25rem;
+  overflow-x: auto;
+  padding-bottom: .5rem;
+  scrollbar-width: thin;
+}
+
+.wave {
+  flex: 1 1 0;
+  /* 78px so twelve ticks fit the 1092px content column without a scrollbar;
+     they still grow to fill it. Narrower viewports scroll the track. */
+  min-width: 78px;
+  padding-top: 1.4rem;
+  position: relative;
+  border: 0;
+  color: inherit;
+  display: block;
+}
+
+/* the tick */
+.wave::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: .85rem;
+  background: var(--brass);
+  transform-origin: top;
+  animation: tick .5s cubic-bezier(.2,.8,.3,1) backwards;
+}
+/* One per tick. A thirteenth wave would simply not be staggered — it still
+   draws, so adding a survey never breaks anything; extend this list if you
+   want the animation to cover it. */
+.wave:nth-child(1)::before { animation-delay: .05s; }
+.wave:nth-child(2)::before { animation-delay: .11s; }
+.wave:nth-child(3)::before { animation-delay: .17s; }
+.wave:nth-child(4)::before { animation-delay: .23s; }
+.wave:nth-child(5)::before { animation-delay: .29s; }
+.wave:nth-child(6)::before { animation-delay: .35s; }
+.wave:nth-child(7)::before { animation-delay: .41s; }
+.wave:nth-child(8)::before { animation-delay: .47s; }
+.wave:nth-child(9)::before { animation-delay: .53s; }
+.wave:nth-child(10)::before { animation-delay: .59s; }
+.wave:nth-child(11)::before { animation-delay: .65s; }
+.wave:nth-child(12)::before { animation-delay: .71s; }
+
+@keyframes tick { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+.wave-year {
+  font-family: var(--mono);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  line-height: 1.2;
+}
+.wave-meta {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+  display: block;
+  margin-top: .3rem;
+}
+
+a.wave { transition: color .15s ease; }
+a.wave:hover .wave-year { color: var(--blue-deep); }
+a.wave:hover::before { background: var(--blue); height: 1.15rem; }
+
+.axis-caption {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 1.5rem 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Prose column + two-column split
+   -------------------------------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+.prose > :last-child { margin-bottom: 0; }
+.prose ul { padding-left: 1.2rem; max-width: var(--measure); }
+.prose li { margin-bottom: .4rem; }
+
+/* --------------------------------------------------------------------------
+   Survey family cards
+   -------------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+.card {
+  background: var(--surface);
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  color: inherit;
+  transition: background .15s ease;
+}
+.card:hover { background: #FBFBF6; }
+.card:hover h3 { color: var(--blue-deep); }
+
+.card h3 { margin-bottom: .5rem; }
+.card p {
+  font-size: .92rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.2rem;
+  max-width: none;
+}
+.card-more {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Dataset / download rows
+   -------------------------------------------------------------------------- */
+
+.dataset {
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  padding: 1.6rem 1.6rem 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.dataset h3 { margin-bottom: .35rem; }
+.dataset p { font-size: .94rem; }
+.dataset-meta {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .05em;
+  color: var(--ink-faint);
+  margin: 0 0 1rem;
+  max-width: none;
+}
+
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.file {
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  padding: .45rem .75rem;
+  border: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+  background: transparent;
+  transition: all .15s ease;
+}
+.file:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+/* The extension names which format you're downloading, so it has to meet the
+   text contrast floor on both of .file's backgrounds. Bright brass clears it
+   on the dark hover fill but not on white, hence the two values. */
+.file .ext { color: var(--brass-deep); }
+.file:hover .ext { color: var(--brass); }
+
+.cite {
+  font-family: var(--display);
+  font-size: .95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--brass);
+  padding-left: 1rem;
+  margin: 1.1rem 0 0;
+  max-width: var(--measure);
+}
+
+/* --------------------------------------------------------------------------
+   People
+   -------------------------------------------------------------------------- */
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem 2.5rem;
+  margin-top: 2rem;
+}
+.person h3 { margin-bottom: .15rem; }
+.person .role {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  color: var(--ink-faint);
+  margin: 0 0 .6rem;
+  max-width: none;
+}
+.person p { font-size: .92rem; color: var(--ink-soft); max-width: none; }
+
+/* --------------------------------------------------------------------------
+   Callout used for editorial notes (funding, placeholders)
+   -------------------------------------------------------------------------- */
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--brass);
+  padding: 1.25rem 1.4rem;
+  font-size: .92rem;
+  max-width: var(--measure);
+}
+.note :last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  padding-block: 3rem 3.5rem;
+  margin-top: 0;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2rem;
+}
+.footer p, .footer li { font-size: .88rem; }
+.footer-note p { color: var(--ink-soft); max-width: 40ch; }
+
+/* --------------------------------------------------------------------------
+   Motion preferences
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001s !important;
+    animation-delay: 0s !important;
+    transition-duration: .001s !important;
+  }
+}

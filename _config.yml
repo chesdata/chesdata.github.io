@@ -1,0 +1,68 @@
+title: Chapel Hill Expert Survey
+description: Expert survey estimates of political party positioning on ideology, policy, and international relations.
+url: "https://www.chesdata.eu"
+baseurl: ""
+
+# Contact address used in the footer and on the contact page.
+email: chesdata@gmail.com
+
+# Bluesky handle, without the leading @. Used to build the profile link in the
+# footer and on the contact page.
+bluesky: chesdata.bsky.social
+
+# GoatCounter analytics. Registered site code; dashboard is at
+# https://chesdata.goatcounter.com
+# Set this to empty to switch tracking off site-wide.
+goatcounter_code: chesdata
+
+# The GitHub repo that holds the data files as Releases.
+# Update the owner/repo once you create it.
+data_repo: chesdata/chesdata.github.io
+# Landing page for all data downloads. Individual file links on the data
+# pages should eventually point at specific release assets instead.
+data_repo_url: "https://github.com/chesdata/chesdata.github.io/releases"
+
+# Link to the interactive Shiny app (hosted separately).
+shiny_url: "https://chesdata.shinyapps.io/Shiny-CHES/"
+
+# Navigation. Order here is the order in the header.
+#
+# Labels are deliberately short. With eight items plus the CHES Interactive
+# link, the fully spelled-out versions ("CHES-Latin America", "CHES-South
+# Asia") overflow the header on a laptop screen. Every item already sits
+# under the CHES wordmark, so the prefix is redundant here. Page titles are
+# unaffected — those come from each file's own front matter.
+# To go back to the long form, replace the titles below with:
+#   CHES-Europe / CHES-Latin America / CHES-Israel / CHES-Canada /
+#   CHES-South Asia / CHES-USA / SPEED-CHES
+#
+# The team page is intentionally NOT in this list. It still lives at
+# /our-team/ and is linked from the footer and from the CHES-Europe page.
+nav:
+  - title: About
+    url: /
+  - title: Europe
+    url: /ches-europe/
+  - title: Latin America
+    url: /chesla/
+  - title: Israel
+    url: /chesisrael/
+  - title: Canada
+    url: /chescanada/
+  - title: South Asia
+    url: /ches-south-asia/
+  - title: USA
+    url: /ches-usa/
+  - title: SPEED-CHES
+    url: /speed-ches/
+
+exclude:
+  - README.md
+  - DATA-FILES-TO-RESCUE.md
+  - Gemfile
+  - Gemfile.lock
+
+# Jekyll defaults
+markdown: kramdown
+plugins:
+  - jekyll-sitemap

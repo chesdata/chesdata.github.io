@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+  <!-- Open Graph. Bluesky's card service reads these; it has no tags of its
+       own, so this one set covers Bluesky, Mastodon, Slack and LinkedIn. -->
+  {%- assign og_desc = page.description | default: site.description -%}
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{% if page.title and page.url != '/' %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+  <meta property="og:description" content="{{ og_desc }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ '/assets/img/og-image.png' | absolute_url }}">
+  <meta property="og:image:alt" content="The CHES logo: the letters C, H, E and S on a grid of blue and cream squares.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="any">
+  <link rel="apple-touch-icon" href="{{ '/assets/img/apple-touch-icon.png' | relative_url }}">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="wordmark" href="{{ '/' | relative_url }}">
+        <img class="wordmark-mark" src="{{ '/assets/img/ches-mark.png' | relative_url }}"
+             alt="" width="96" height="96">
+        <span class="wordmark-abbr">CHES</span>
+        <span class="wordmark-full">Chapel Hill Expert Survey</span>
+      </a>
+
+      <button class="navtoggle" aria-expanded="false" aria-controls="sitenav">Menu</button>
+
+      <nav id="sitenav" class="sitenav" aria-label="Main">
+        <ul>
+          {% for item in site.nav %}
+          <li>
+            <a href="{{ item.url | relative_url }}"
+               {% if page.url == item.url %}aria-current="page"{% endif %}>{{ item.title }}</a>
+          </li>
+          {% endfor %}
+          <li class="nav-sep"><a class="nav-ext" href="{{ site.shiny_url }}">CHES Interactive &nearr;</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    {{ content }}
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-block">
+        <p class="label">Contact</p>
+        <ul class="plain">
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="https://bsky.app/profile/{{ site.bluesky }}" rel="me">@{{ site.bluesky }}</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <p class="label">Explore</p>
+        <ul class="plain">
+          <li><a href="{{ site.shiny_url }}">CHES Interactive</a></li>
+          <li><a href="{{ '/ches-europe/' | relative_url }}">Download data</a></li>
+          <li><a href="{{ '/our-team/' | relative_url }}">Team</a></li>
+        </ul>
+      </div>
+      <div class="footer-block footer-note">
+        <p class="label">Chapel Hill Expert Survey</p>
+        <p>Party positioning data since 1999. Please cite the survey wave you use — citations are listed on each data page.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    (function () {
+      var btn = document.querySelector('.navtoggle');
+      var nav = document.getElementById('sitenav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+
+  {% if site.goatcounter_code and site.goatcounter_code != "" %}
+  <!-- GoatCounter: privacy-first pageview analytics. No cookies. -->
+  <script data-goatcounter="https://{{ site.goatcounter_code }}.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  {% endif %}
+
+</body>
+</html>
