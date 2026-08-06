@@ -65,10 +65,5 @@ description: The principal investigators behind the Chapel Hill Expert Survey.
       </div>
 
     </div>
-
-    <div class="note" style="margin-top:2.5rem">
-      <p><strong>Two things to fix here.</strong> First, four bios are placeholders — I only pulled the ones that were visible in search results, and I didn't want to write bios for your colleagues from guesswork. Copy the full text across from Squarespace.</p>
-      <p>Second, the Squarespace version lists you as Associate Professor. I've updated that to Professor, but check whether you also want "and Chair of the Political Science Department" in there.</p>
-    </div>
   </div>
 </section>

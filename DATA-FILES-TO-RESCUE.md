@@ -1,55 +1,19 @@
-# Data files to pull off Squarespace before you cancel it
+# Data files: rescue status
 
-Every `.file` link on the data pages currently points at the GitHub Releases
-landing page as a placeholder. The real files are still on Squarespace at the
-URLs below. **These die when the Squarespace subscription ends**, so download
-them now, attach them to a GitHub Release, then replace the placeholder `href`s.
+**Short version: the rescue is done.** Every dataset, codebook, and
+questionnaire the site links to for CHES-Europe, CHES-Latin America,
+CHES-Israel, CHES-Canada, and SPEED-CHES is now uploaded to a GitHub Release
+and linked from the matching page. Squarespace can be cancelled without
+losing any of that.
 
-Captured from chesdata.eu on 4 August 2026. Verify each one still resolves
-before you rely on this list.
+## What's on GitHub Releases now
 
-## CHES-Latin America 2020 — from /chesla
-- https://www.chesdata.eu/s/ches_la_2020_aggregate_level_v01.dta
-- https://www.chesdata.eu/s/ches_la_2020_aggregate_level_v01.rds
-- https://www.chesdata.eu/s/ches_la_2020_aggregate_level_v01.csv
-- https://www.chesdata.eu/s/ches_la_2020_expert_level_v01.dta
-- https://www.chesdata.eu/s/ches_la_2020_expert_level_v01.rds
-- https://www.chesdata.eu/s/ches_la_2020_expert_level_v01.csv
-- https://www.chesdata.eu/s/2020_ches_la_codebook.pdf
-- https://www.chesdata.eu/s/2020_ches_la_questionnaire_english.pdf
-- https://www.chesdata.eu/s/2020_ches_la_questionnaire_spanish.pdf
-- https://www.chesdata.eu/s/2020_ches_la_questionnaire_portuguese.pdf
-
-## CHES-Israel 2021/2022 — from /chesisrael
-- https://www.chesdata.eu/s/CHES_ISRAEL_means_2021_2022.dta
-- https://www.chesdata.eu/s/CHES_ISRAEL_means_2021_2022.csv
-- https://www.chesdata.eu/s/CHES_ISRAEL_expert_level_2021_2022.dta
-- https://www.chesdata.eu/s/CHES_ISRAEL_expert_level_2021_2022.csv
-- https://www.chesdata.eu/s/CHES_ISR_Codebook.pdf
-- https://www.chesdata.eu/s/Qualtrics-Survey-Israel2022.pdf
-
-## CHES-Canada 2023 — from /chescanada
-- https://www.chesdata.eu/s/CHES_CA2023.dta
-- https://www.chesdata.eu/s/CHES_CA2023.csv
-- https://www.chesdata.eu/s/CHES_CA2023_expert-level.dta
-- https://www.chesdata.eu/s/CHES_CA2023_expert-level.csv
-- https://www.chesdata.eu/s/CHES_CA2023_Codebook.pdf
-
-## Still to capture
-I haven't listed the CHES-Europe or SPEED-CHES file URLs — those pages weren't
-fetched in full. The same `/s/FILENAME` pattern applies, and the pages are:
-
-- /ches-europe, /1999-2019chestrend, /2024-chapel-hill-expert-survey-ches
-- /2019-chapel-hill-expert-survey, /2017-chapel-hill-expert-survey
-- /2014-chapel-hill-expert-survey, /2002-chapel-hill-expert-survey
-- /speedches
-
-A quick way to grab everything at once, run from the repo root:
-
-```
-wget -r -l2 -H -D www.chesdata.eu,chesdata.eu \
-     -A dta,csv,rds,pdf,sav,zip -nd -P rescued/ https://www.chesdata.eu/
-```
-
-Check what it collected before trusting it — `wget` mirroring against
-Squarespace is hit and miss.
+- **`ches-trend`** — the 1999&ndash;2024 merged trend file
+- **`ches-europe`** — every CHES-Europe wave: 1984&ndash;1999 (Ray&ndash;Marks&ndash;Steenbergen),
+  1999, 2002, 2006, 2007 candidate countries, 2010, 2014, 2014 candidate,
+  2019, 2019 candidate, 2024
+- **`ches-la`** — the 2020 Latin America wave, all formats and all three
+  questionnaire languages
+- **`ches-israel`** — the 2021/2022 Israel wave
+- **`ches-canada`** — the 2023 Canada wave
+- **`ches-speed`** — all three SPEED waves: 2017 FLASH, 2020 COVID, 2023 Ukraine

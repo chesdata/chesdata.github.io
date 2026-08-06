@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CHES-USA — Chapel Hill Expert Survey</title>
+  <meta name="description" content="A Chapel Hill Expert Survey for the United States is in preparation.">
+
+  <!-- Open Graph. Bluesky's card service reads these; it has no tags of its
+       own, so this one set covers Bluesky, Mastodon, Slack and LinkedIn. -->
+    <meta property="og:site_name" content="Chapel Hill Expert Survey">
+  <meta property="og:title" content="CHES-USA">
+  <meta property="og:description" content="A Chapel Hill Expert Survey for the United States is in preparation.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.chesdata.eu/ches-usa/">
+  <meta property="og:image" content="https://www.chesdata.eu/assets/img/og-image.png">
+  <meta property="og:image:alt" content="The CHES logo: the letters C, H, E and S on a grid of blue and cream squares.">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <link rel="icon" href="data:image/x-icon;base64,AAABAAMAEBAAAAAAIAB2AgAANgAAACAgAAAAACAArwUAAKwCAAAwMAAAAAAgANIIAABbCAAAiVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAACPUlEQVR4nK2TS0jUURTGf+f+77zUsYeh9IBaSBJIiRUF2iKICpIsqEUtIloGtWgRtGtX2zYtCyGIXLjqIbmKyiJNItFKBUmpMXMmnWl0XveeFv+paG0fHM7iPDjnO9+RbPa7UoUCESO8m8vxNVckEgjOK4m4ZfTDAn1PJknELF7/lGBYJVbdwDrvARAEBRwKCkJo/0CVcFFCr2DX1CUQI7iKR1WxUYtZWKHsw0QPKIKKIIHFBBHK5Qo2CMIJrtzspVgoUZeswdqAdDrLyWP72Nu8mXKpjPOKipAyBX58+chK1NK0oZ70Qh7vFfvg0Rt272nhwK7tKPB6fJYXg2NMTMxy+fwJrt64Q6niWZuMU8mnuXjmKI0N6xifmuVu30vslo0NdHd3cP/eANmlPCYwxGJRno9MEY/3Mzw+Q9fBNhrXJ1EMO3dsY/Lzd4bGZghsBKNVMjRkEmMMrnpnGxhACIxBDIgRbvUMkMsvc/1SN/W1Mez8twyPH76i63gH3nkGng5h1HFofwsXTh9mejZFaj7DYjaHrzg625upr6lhcGSSzOJP5Oy121oolEgmazCBIZPJcaSzja2bGvHO4bxSKjtSC2meDY8TtQGNDfWk5pcQI0j/p2kVMTjn8KrU1cbo6X3P29E54rEIxgiFYoX21ibOnWpluVDBOU8kEoQ6WF4uhkIS8KqIOiKBUJeIkohbUDAK1kA+v8JK0REYoVwqhzwZ81dvQkiiAt4r/reYVNFqzBiPiCDyn35h1Q1+AZT2+1qLnCl8AAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAFdklEQVR4nO2WbYwVVxnHf+dl7sy9s7ssWOyy5aVbKLC0IEILRKMGSbOBNKYRlZj4Uv2CibGlmGg1UaMlVk0kKFGDH6RNtQVjMVRpFembrWjYCguWbhZQgrhQsoXCLnPvzL1zzuOHubsuIHzUL/skM5lz5jz/8z/nPM//OWp4eEi4gYlAYBVnhjP63hwh0IrrOXgRyqFl13PH+Vv/EOUowMsN4dE3/Ps/sAkCEwQmCFjn/A0HiIBSCu8FpUBB83WtKQGlxjmOPgrGxGP8N2Db2yrXQSsGegFtFBdzqOcCGvw4DuNlRkQwuSBolA1Q1qKkIKOazESk8G4C2N3P940BaF30OudAQBuD1opGnlNujenqmIpzDqXUNQQE8N4TV0ICl1C9dA7diBARtFI0nAMgsAYRwfvC0z706M6xybOsgXOOShyh0VRrKQpFtZ6zbvVSfvzNT1FLqiilmyspjkcphdEaEU8QRYTpW7z9rwFUe0ya1snqDdpaK3gvjCRVjDZUyiXEC7atpYzWijStM2vGO1m9ZgWzb5+O0ZrBwSFefeUwr+4/yk2TW/nzoRNs/PYOHnnwPt5311yMVjz26/08tecApcBy4VLCskVdWKOxpYCGg8mT2/jiZ3tYuXweWd1x4MgpnnzmTxw5NkhYsmgQarU6N3dM4fMPfoTFS+bS33+KgwePMXvOLaxcuZS8kaMVjFyu0dd/mpEkxRiNMZpz54c5MnCajqmT6J7dycxpU5ohJKRZnQ2fvoe1PXeze18fr/z1GB9atZjF3TNI0zpKKezomff0LOMdk9vY+sNf8VpvP0ZrXnrhIN4L3oOgsMbQUomIwgAbBICiEpWIyyGPPPBhpndOA3Ie2vQ43kElMiyYM403z11g246XOP7Pc3x32x4auaclDvHeY/PcE8cRXbfdwokTgxx9/STt7S0opRgaepvAWoKSBRFy54migM2P/YGfPPUySsH5iwlxOWT9N7aTZjnf2biWuBziEeq5Z9/+N9hw/7388Rdf5vDAaXbvO8xvXzxE7ot9sleknRqXx81O5/0VQ0SEUmApRwFKgbUaAcphCWsMxhRt74SWSSFbn3ie/r+fZe09S1i68FY2bfw4714wnYe/v4vYlrDWapIk5eQ/zrDiPXdyx51d9B7oR2vNzJkdhKHlrddPFpFuNGnW4IFPrqLn/e8CNFu2P8uWx/ey9WufYNrNxRE8sXs/xmqyzNF9WydHjw/y5G/+QsdNbezcsp4PruimvbVCLc2KHTBGs/f3B5g3fxbrP3cfS5bMI8vqrHjvQs4PXeThr/wUL0LuHUk1I6lmNOoZRmuSWkZSq/PVzU8jwB1zOottFCGwmu996aPM7epk195eRi7XWDBnFofeOMlwUiMqBQWBKAo5e+Y8P9r6NKvXLGf+glvRSjHQf4oXXzgIqhCauByxaP4MWuIQ5wURx9QprSycO52zQxe5cCkhLpcIA4sxGqUUj27bw7o1y/nAsnmEJcvLvQNs3v47tNJorVC3r/qCjApKvV7HOSGOI0CRVGsERpOkOevWLOUHX78f16gVstoUIq2agWNUU7fLbPjWz9jx7GtMmRRz6XIN8UJrS4TRiuHLKdYYwtAiIqhNP39uTM6VLiTW5R5BMNaM6bfPNVlqr6pDo5VFIchYK4xytPWFnOtCKRu5AxFsE3NMiu9a1v0fvCaV0UwQKW66caVEb98Zdv7yCJVyMOZ8tWmtqNYafOZji7h7cSdJtV7UF7kSc4w7YKtJ+l/BRlfmRfAux+c57a0h5ZK97lVbK0XJanyeMzJSJc3y4oiuwhxvdrQCXmujlIssQSmcE5yX6xIQBc4VyzWmCLIrCVw71//9RjRBYILABIF/AyiPTnXxwMdeAAAAAElFTkSuQmCCiVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAImUlEQVR4nO2ZaWxc1RmGn3PuudvMeBIbnNgmwRlnwVmchhAgkLI03SghCkKoUhcFEP1FS0VbqfxtRFsqUYmqoipCohTEUioKpRDUAoU2QTShJCGAk0BMQkiTOgkx9niWu5/+uNfjhS24lVwkv9JopDtn+d7zne8977kjyuUTmklACAhizbbDgwSxRohT76sBQwpq9Yh7Hn6NWj3CkILJBCIn0ef/CtMEphrTBKYa0wSmGtMEphrTBKYan3oCSutJeTkA/ouu/zMopYxJdRQCEqHRfHIiI33SfiId7JPY2TFQg+XaxzYS2aTjngkIE1BCgJE1GtN+bLATMWKnTUOgkwgdh2gtJ2Wn1VdvuvMDQ5ZSoLUmiRM0IKVsPAMIo4TmostdP76GYsEljGKEEOknC1KQrfSE0LTWKMNgqFLnF/37GBiqYyqZZUQjhUBIQRwnJFojhcQwBFpDkiTjCQwMjc+AFIIkSah7AaZp4LoOUgg8P8CrB1iWwrJM/DBCoDGEIGebYCkAgjBOSWYspJSYpjEuFVonKFPhez5JnGVAGCRaY0hB3Y/w/ZCmgottGnh+wFDZx1QGOcdibN0qs1EDGiEkYRhiWYqLL1nB0mUlZswsIIWgVvM5dKifrVt2c+L4e1imgRCSnGvz6NM7efDJ7bS1zuBH31nPjIJLEMUUXJvtrx7k9nufJeeY4zIUxjHXXrkG17EYGKqBEGnwXsjc9ma+dfVFLF14BralGK567DvQz2PP7KS37yiWqRokGiokhCAIQmY2N3HtdZdT6mpHSokQ6bYRQjCv1M555y/h/vv+zK5d+ynmXUwlOdw/wJaX36RrTmtjK2kNSkneG6rywo4+ZhRsyhWPKE6QUuJ5PusuXo4yjGx88IOIOW3N3HPrdcztmJVtRA0YnNNT4utXnM8PfvYwjz/3Ck15lyRJUCOpSBKNaRpcc93lzCu14/shB946yu7dfSRxwvwFZ3D2ykX4fsjgexUMKQGN1mCZiqa8Qz5no7OxkkQTxxopJcWCjWObXH3ZKubMbiYIY4SABZ2z8IMQIQRSCOpewDfXr2ZuxyyO9r/LA09s59CRk5zVNZsrv7CSOI55ufcQjmWOZoCsQKvVOp9bu5JSqZ0wjPjnS3v53YPPkCRpwy1/f4Xe1w9SLld5++1/YztWQz61TgPWiSbvWORzNoYyMMw0cJ1ogiDmG+tXs2ThQsADBMdOnCQIY2SWMVMZzGlvJkkSjp8c5vbfPkMQRhiG5PG/7qaQszl6fJBCzm7EpRqqoAyWLusCoDxUZfMTL6KUwrJUQx127ngDw5AUCi5+EE3QLYiThF17DzOzySUIYwo5m/1vH0PKVNVe2fsOcRxTrnjMbW/BUgZCZIolIIoTBss1pITOjhbuv+16ntryOnv6jrLvQD9hFNPaXCCKR5VIpdsnwXXttGCl4MjRd6lU6jiOSTymsetamZRNlMU0i3U/5Lu3PDRONqUU2JYJwE9+vRkhBQODVTbduIGvXXEecawbY1im4sEnt/P5CxbT0lxg7QVLuPT8bk4OVnjj4DHu++OLPL9tHznXbmyhcV5ITPieCK0/4scMpmlgmarxUcboSW9ZCte2cB0LpcbbsERrXNukt+8oG2++m4effIm3Dh3D90NaW4qsOXs+d92ykau+tJJKzUNKOZoBKSX1us/QUJW2jtPoOON0mppcajV/zBYCr+6DAMexx00uRLp9XMfith9eTXNTDj+MacrbvLCjj5/euRlTSTbduIEVi+cyXPVobWliuOphGKMrotE4lsmuPe/w2htH6Jg1k/lntrJ2dTfrLl3OaTPzbNxwIZv/9lrjQJNpAIIojOntPYhAUCzmWbd+DVEUUanUqVXrlMtVVqxcxDmruqlUakj5/lRIIVjYOYvFXe2cVZrNgnkdzJndnBU5LJo3m9KZnSxffCbts09P38bpkUUQeH6E61jcdM0XaWstcrh/gOe37+OGTQ/w3D/2YigT21LkXIskSaW3UQOOa7HtxddZdW43nZ1trDq3m5aWIq/u7iOKY7pKHaxYuRDXdQDYvm0PxYLbmHykUD0/pOYHeEGEbQaEUYSQAssyeGjzS8zdsZ8gjEAIVn+mC8tMzwGtNZZpcOv3r2Lthcu57KJlPP1CLwePvEtrc4Fze0oINMcHhhkarqfqpvXoOSClJAwj7v3NU1x7/To6O9tYuqzEsp4utE71PIpijh0boFyuIg0B2QEUhBHDVY9qzW9kQgqBYaR+plzxEcDdj2wdd5DduWkjdqbpWmtMZXBysILnVenp7qSnuwRE2UbR1Ot17vr9FpIkSdVLZ2YyLVCNZZkMDJT51S8f4YI1PSxZWqJYzCOASqXG/jf/xdatuxkuV7EsExCEUcKcthYuWrWI9tNnoFTqaSAzfDPyfPacBamVQKSuWQiiKKa1pUAcJ1kGJWEUc/PP/8Bjz+5i3SU9dHe1Uyw4BGHMgcMnuP9P29i55x3yOadBQiz9yvcampfKYWbmMuPmujYg8Dwf3w9xHAulDPwg4rSZOR6949u0NheyIoRwxMw1MiswlWKsm9Nao0zFiZNlNtxwBwNDNUxlNDJdqflEUUw+Z+PaJlEUU656GIYk71jEyejbcJXPu+8rRgQUiwW01sRZtRftPFJItE4AgWnFuDmHSi1ESI+oYacnDIRGa3/c8FprDCUZrgTkcg5+pBsEAPJ5ByFG7bQyFYVCDo1+3xkkHtr26kfeI0biGdto5ELieTGP/+UtPD+1Ax+GDzo+Eq1xbIMNX56P4xjpqp7i/GPxwRn4GIwQEDKiXAup1aL0wnGK/QUQx5pcrHBzDjlXfSiBj4MaaxVOFak1EiRxgjIESolP9A9LVscoIx0jjpPJE5jkXTpTk9HLeXp1PHU0LvVj7vSTCeVT/15omsBUY5rAVGOawFRjmsBUY5rAVONTT+A/fjTsb9O5bqEAAAAASUVORK5CYII=" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Libre+Franklin:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>/* ==========================================================================
+   Chapel Hill Expert Survey
+   Design tokens
+   --------------------------------------------------------------------------
+   The survey's own instrument is a positioned point on a scale, measured
+   again and again across waves. The recurring motif here is a hairline axis
+   with brass tick marks: used in the hero as the wave timeline, and as the
+   divider between sections.
+
+   Palette: the four blues and the cream are sampled directly from the CHES
+   logo (assets/img/ches-mark.png), so the mark sits on the page without
+   introducing a fifth colour. Brass is the one non-logo accent and is
+   reserved for the axis ticks and the wordmark rule.
+   ========================================================================== */
+
+:root {
+  --ink:        #1B2A33;
+  --ink-soft:   #4E6069;
+  --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
+  --paper:      #F2F2EB;   /* logo cream */
+  --surface:    #FFFFFF;
+  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue-deep:  #2D4B73;   /* logo navy      — link rest */
+  --brass:      #C08D22;   /* graphics only: ticks, rules */
+  --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
+  --rule:       #B7D4DB;   /* logo pale blue, lightened to cream */
+  --rule-soft:  #D8E5E4;
+
+  --display: 'Newsreader', Georgia, 'Times New Roman', serif;
+  --body:    'Libre Franklin', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --mono:    'IBM Plex Mono', 'SFMono-Regular', Consolas, monospace;
+
+  --measure: 68ch;
+  --wrap: 1140px;
+  --step: 1.5rem;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 17px;
+  line-height: 1.65;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap {
+  width: 100%;
+  max-width: var(--wrap);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  background: var(--ink);
+  color: #fff;
+  padding: .6rem 1rem;
+  z-index: 100;
+}
+.skip:focus { left: 0; }
+
+/* --------------------------------------------------------------------------
+   Typography
+   -------------------------------------------------------------------------- */
+
+h1, h2, h3 {
+  font-family: var(--display);
+  font-weight: 500;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  margin: 0 0 .6em;
+  text-wrap: balance;
+}
+
+h1 { font-size: clamp(2.4rem, 5.2vw, 4rem); }
+h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); }
+h3 { font-size: 1.2rem; letter-spacing: -0.005em; }
+
+p { margin: 0 0 1.1em; max-width: var(--measure); }
+
+a {
+  color: var(--blue-deep);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(63,108,166,.35);
+  transition: border-color .15s ease, color .15s ease;
+}
+a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+a:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Small mono label — used for eyebrows, metadata, field names.
+   Mono because the survey's working artifacts are codebooks and variable
+   names; the labels read like the data itself. */
+.label {
+  font-family: var(--mono);
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0 0 .7rem;
+}
+
+.lede {
+  font-family: var(--display);
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  line-height: 1.5;
+  color: var(--ink-soft);
+  max-width: 46ch;
+}
+
+ul.plain { list-style: none; padding: 0; margin: 0; }
+ul.plain li { margin-bottom: .35rem; }
+
+/* --------------------------------------------------------------------------
+   Masthead
+   -------------------------------------------------------------------------- */
+
+.masthead {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(242,242,235,.94);
+  backdrop-filter: saturate(140%) blur(8px);
+  border-bottom: 1px solid var(--rule);
+}
+
+.masthead-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  min-height: 68px;
+}
+
+.wordmark {
+  display: flex;
+  align-items: baseline;
+  gap: .6rem;
+  border: 0;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+.wordmark:hover { color: var(--blue-deep); }
+
+/* The logo, small. .wordmark aligns on the baseline for the two text spans,
+   so the image has to opt out of that and centre itself instead. */
+.wordmark-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 2px;
+  display: block;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+.wordmark-abbr {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 1.05rem;
+  letter-spacing: .1em;
+  padding-bottom: 2px;
+  border-bottom: 2px solid var(--brass);
+}
+.wordmark-full {
+  font-family: var(--display);
+  font-size: 1rem;
+  color: var(--ink-soft);
+}
+
+.sitenav ul {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.sitenav a {
+  font-size: .84rem;
+  font-weight: 500;
+  color: var(--ink-soft);
+  border: 0;
+  padding: .35rem 0;
+  border-bottom: 2px solid transparent;
+  white-space: nowrap;
+}
+.sitenav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
+.sitenav a[aria-current="page"] {
+  color: var(--ink);
+  border-bottom-color: var(--brass);
+}
+.nav-sep { padding-left: 1.35rem; border-left: 1px solid var(--rule); }
+.nav-ext { color: var(--blue-deep) !important; }
+
+.navtoggle {
+  display: none;
+  font-family: var(--mono);
+  font-size: .72rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  padding: .5rem .8rem;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .wordmark-full { display: none; }
+  .navtoggle { display: block; }
+  .sitenav {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--surface);
+    border-bottom: 1px solid var(--rule);
+    display: none;
+    box-shadow: 0 12px 24px -12px rgba(27,42,51,.18);
+  }
+  .sitenav.is-open { display: block; }
+  .sitenav ul {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: .5rem 1.5rem 1.25rem;
+  }
+  .sitenav li { border-bottom: 1px solid var(--rule-soft); }
+  .sitenav a { display: block; padding: .85rem 0; border: 0; }
+  .nav-sep { padding-left: 0; border-left: 0; border-bottom: 0; }
+}
+
+/* --------------------------------------------------------------------------
+   Sections
+   -------------------------------------------------------------------------- */
+
+section { padding-block: clamp(3rem, 7vw, 5.5rem); }
+section + section { border-top: 1px solid var(--rule-soft); }
+
+.hero { padding-block: clamp(3.5rem, 9vw, 7rem) clamp(2.5rem, 5vw, 4rem); }
+.hero h1 { max-width: 22ch; margin-bottom: 1.2rem; }
+
+.pagehead {
+  padding-block: clamp(2.75rem, 6vw, 4.5rem) clamp(1.5rem, 3vw, 2.5rem);
+  border-bottom: 1px solid var(--rule-soft);
+}
+.pagehead h1 { font-size: clamp(2rem, 4.2vw, 3.1rem); max-width: 26ch; }
+
+/* --------------------------------------------------------------------------
+   SIGNATURE: the wave axis
+   A hairline rule with brass ticks, one per survey wave. Order and spacing
+   carry real information here — these are the actual fielding years.
+   -------------------------------------------------------------------------- */
+
+.axis {
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: 2.2rem;
+  border-top: 1px solid var(--rule);
+  position: relative;
+  /* Offsets the #waves anchor jump from the footer link so the sticky
+     masthead (≈68px) doesn't cover the top of the timeline on landing. */
+  scroll-margin-top: 90px;
+}
+
+.axis-track {
+  display: flex;
+  align-items: flex-start;
+  gap: .25rem;
+  overflow-x: auto;
+  padding-bottom: .5rem;
+  scrollbar-width: thin;
+}
+
+.wave {
+  flex: 1 1 0;
+  /* 78px so twelve ticks fit the 1092px content column without a scrollbar;
+     they still grow to fill it. Narrower viewports scroll the track. */
+  min-width: 78px;
+  padding-top: 1.4rem;
+  position: relative;
+  border: 0;
+  color: inherit;
+  display: block;
+}
+
+/* the tick */
+.wave::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: .85rem;
+  background: var(--brass);
+  transform-origin: top;
+  animation: tick .5s cubic-bezier(.2,.8,.3,1) backwards;
+}
+/* One per tick. A thirteenth wave would simply not be staggered — it still
+   draws, so adding a survey never breaks anything; extend this list if you
+   want the animation to cover it. */
+.wave:nth-child(1)::before { animation-delay: .05s; }
+.wave:nth-child(2)::before { animation-delay: .11s; }
+.wave:nth-child(3)::before { animation-delay: .17s; }
+.wave:nth-child(4)::before { animation-delay: .23s; }
+.wave:nth-child(5)::before { animation-delay: .29s; }
+.wave:nth-child(6)::before { animation-delay: .35s; }
+.wave:nth-child(7)::before { animation-delay: .41s; }
+.wave:nth-child(8)::before { animation-delay: .47s; }
+.wave:nth-child(9)::before { animation-delay: .53s; }
+.wave:nth-child(10)::before { animation-delay: .59s; }
+.wave:nth-child(11)::before { animation-delay: .65s; }
+.wave:nth-child(12)::before { animation-delay: .71s; }
+
+@keyframes tick { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+
+.wave-year {
+  font-family: var(--mono);
+  font-size: 1.02rem;
+  font-weight: 500;
+  color: var(--ink);
+  display: block;
+  line-height: 1.2;
+}
+.wave-meta {
+  font-family: var(--mono);
+  font-size: .66rem;
+  letter-spacing: .04em;
+  color: var(--ink-faint);
+  display: block;
+  margin-top: .3rem;
+}
+
+a.wave { transition: color .15s ease; }
+a.wave:hover .wave-year { color: var(--blue-deep); }
+a.wave:hover::before { background: var(--blue); height: 1.15rem; }
+
+.axis-caption {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 1.5rem 0 0;
+}
+
+/* --------------------------------------------------------------------------
+   Prose column + two-column split
+   -------------------------------------------------------------------------- */
+
+.split {
+  display: grid;
+  grid-template-columns: minmax(0, 12rem) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+@media (max-width: 760px) {
+  .split { grid-template-columns: 1fr; gap: 1rem; }
+}
+
+.prose > :last-child { margin-bottom: 0; }
+.prose ul { padding-left: 1.2rem; max-width: var(--measure); }
+.prose li { margin-bottom: .4rem; }
+
+/* --------------------------------------------------------------------------
+   Survey family cards
+   -------------------------------------------------------------------------- */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1px;
+  background: var(--rule);
+  border: 1px solid var(--rule);
+}
+
+.card {
+  background: var(--surface);
+  padding: 1.75rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  border: 0;
+  color: inherit;
+  transition: background .15s ease;
+}
+.card:hover { background: #FBFBF6; }
+.card:hover h3 { color: var(--blue-deep); }
+
+.card h3 { margin-bottom: .5rem; }
+.card p {
+  font-size: .92rem;
+  color: var(--ink-soft);
+  margin-bottom: 1.2rem;
+  max-width: none;
+}
+.card-more {
+  font-family: var(--mono);
+  font-size: .68rem;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   Dataset / download rows
+   -------------------------------------------------------------------------- */
+
+.dataset {
+  border: 1px solid var(--rule);
+  background: var(--surface);
+  padding: 1.6rem 1.6rem 1.4rem;
+  margin-bottom: 1.25rem;
+}
+.dataset h3 { margin-bottom: .35rem; }
+.dataset p { font-size: .94rem; }
+.dataset-meta {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .05em;
+  color: var(--ink-faint);
+  margin: 0 0 1rem;
+  max-width: none;
+}
+
+.files {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin-top: 1.1rem;
+  padding-top: 1.1rem;
+  border-top: 1px solid var(--rule-soft);
+}
+
+.file {
+  font-family: var(--mono);
+  font-size: .74rem;
+  letter-spacing: .04em;
+  padding: .45rem .75rem;
+  border: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--ink);
+  background: transparent;
+  transition: all .15s ease;
+}
+.file:hover {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+}
+/* The extension names which format you're downloading, so it has to meet the
+   text contrast floor on both of .file's backgrounds. Bright brass clears it
+   on the dark hover fill but not on white, hence the two values. */
+.file .ext { color: var(--brass-deep); }
+.file:hover .ext { color: var(--brass); }
+
+.cite {
+  font-family: var(--display);
+  font-size: .95rem;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--brass);
+  padding-left: 1rem;
+  margin: 1.1rem 0 0;
+  max-width: var(--measure);
+}
+
+/* --------------------------------------------------------------------------
+   People
+   -------------------------------------------------------------------------- */
+
+.people {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem 2.5rem;
+  margin-top: 2rem;
+}
+.person h3 { margin-bottom: .15rem; }
+.person .role {
+  font-family: var(--mono);
+  font-size: .7rem;
+  letter-spacing: .06em;
+  color: var(--ink-faint);
+  margin: 0 0 .6rem;
+  max-width: none;
+}
+.person p { font-size: .92rem; color: var(--ink-soft); max-width: none; }
+
+/* --------------------------------------------------------------------------
+   Callout used for editorial notes (funding, placeholders)
+   -------------------------------------------------------------------------- */
+
+.note {
+  background: var(--surface);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--brass);
+  padding: 1.25rem 1.4rem;
+  font-size: .92rem;
+  max-width: var(--measure);
+}
+.note :last-child { margin-bottom: 0; }
+
+/* --------------------------------------------------------------------------
+   Footer
+   -------------------------------------------------------------------------- */
+
+.footer {
+  border-top: 1px solid var(--rule);
+  background: var(--surface);
+  padding-block: 3rem 3.5rem;
+  margin-top: 0;
+}
+.footer-inner {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 2rem;
+}
+.footer p, .footer li { font-size: .88rem; }
+.footer-note p { color: var(--ink-soft); max-width: 40ch; }
+
+.footer-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   Motion preferences
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .001s !important;
+    animation-delay: 0s !important;
+    transition-duration: .001s !important;
+  }
+}
+</style>
+</head>
+<body>
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="wordmark" href="index.html">
+        <img class="wordmark-mark" src="data:image/png;base64,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"
+             alt="" width="96" height="96">
+        <span class="wordmark-abbr">CHES</span>
+        <span class="wordmark-full">Chapel Hill Expert Survey</span>
+      </a>
+
+      <button class="navtoggle" aria-expanded="false" aria-controls="sitenav">Menu</button>
+
+      <nav id="sitenav" class="sitenav" aria-label="Main">
+        <ul>
+                    <li>
+            <a href="index.html"
+               >About</a>
+          </li>
+          <li>
+            <a href="ches-europe.html"
+               >Europe</a>
+          </li>
+          <li>
+            <a href="ches-la.html"
+               >Latin America</a>
+          </li>
+          <li>
+            <a href="ches-israel.html"
+               >Israel</a>
+          </li>
+          <li>
+            <a href="ches-canada.html"
+               >Canada</a>
+          </li>
+          <li>
+            <a href="ches-southasia.html"
+               >South Asia</a>
+          </li>
+          <li>
+            <a href="ches-usa.html"
+               aria-current="page">USA</a>
+          </li>
+          <li>
+            <a href="speed-ches.html"
+               >SPEED-CHES</a>
+          </li>
+          <li class="nav-sep"><a class="nav-ext" href="https://chesdata.shinyapps.io/Shiny-CHES/">CHES Interactive &nearr;</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    
+<section class="pagehead">
+  <div class="wrap">
+    <p class="label">CHES-USA</p>
+    <h1>Coming soon.</h1>
+    <p class="lede">Expert estimates of party positioning on ideology, policy, and international relations in the United States. Data and codebooks will be posted on this page.</p>
+  </div>
+</section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-inner">
+      <div class="footer-block">
+        <p class="label">Contact</p>
+        <ul class="plain">
+          <li><a href="mailto:chesdata@gmail.com">chesdata@gmail.com</a></li>
+          <li><a href="https://bsky.app/profile/chesdata.bsky.social" rel="me">@chesdata.bsky.social</a></li>
+        </ul>
+      </div>
+      <div class="footer-block">
+        <p class="label">Explore</p>
+        <ul class="plain">
+          <li><a href="https://chesdata.shinyapps.io/Shiny-CHES/">CHES Interactive</a></li>
+          <li><a href="index.html#waves">Download data</a></li>
+        </ul>
+      </div>
+      <div class="footer-block footer-note">
+        <p class="label">Chapel Hill Expert Survey</p>
+        <img class="footer-mark" src="data:image/png;base64,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"
+             alt="Chapel Hill Expert Survey" width="96" height="96">
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Mobile nav
+    (function () {
+      var btn = document.querySelector('.navtoggle');
+      var nav = document.getElementById('sitenav');
+      if (!btn || !nav) return;
+      btn.addEventListener('click', function () {
+        var open = nav.classList.toggle('is-open');
+        btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      });
+    })();
+  </script>
+
+  
+  <!-- GoatCounter: privacy-first pageview analytics. No cookies. -->
+  <script data-goatcounter="https://chesdata.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+  
+
+</body>
+</html>

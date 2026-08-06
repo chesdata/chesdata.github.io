@@ -40,6 +40,18 @@ def resolve(path):
 
 def render(fm, body):
     page_url = fm['permalink']
+
+    # layout: null pages (e.g. redirects) supply their own complete <html>
+    # document and skip the site layout entirely -- just resolve the Liquid
+    # tags in the body and write it as-is, the same way real Jekyll would.
+    if fm.get('layout') is None:
+        out = body
+        for m in set(re.findall(r"\{\{\s*'([^']+)'\s*\|\s*(?:relative_url|absolute_url)\s*\}\}", out)):
+            for filt in ('relative_url', 'absolute_url'):
+                tgt = cfg['url'] + m if filt == 'absolute_url' else resolve(m)
+                out = re.sub(r"\{\{\s*'" + re.escape(m) + r"'\s*\|\s*" + filt + r"\s*\}\}",
+                             tgt.replace('\\', '\\\\'), out)
+        return out
     desc = fm.get('description') or cfg['description']
     title = (f"{fm['title']} — {cfg['title']}" if page_url != '/' else cfg['title'])
     ogtitle = fm['title'] if page_url != '/' else cfg['title']

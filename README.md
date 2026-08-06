@@ -16,9 +16,7 @@ python3 build-preview.py
 open _preview/index.html
 ```
 
-This is a shim that fakes the Jekyll build so you can look at the design in a
-browser right now. It is not used by the published site. If you edit a `.md`
-file, re-run it.
+This is a shim that fakes the Jekyll build so you can look at the design in a browser right now. It is not used by the published site. If you edit a `.md` file, re-run it.
 
 ## 2. Put it on GitHub Pages
 
@@ -36,35 +34,23 @@ file, re-run it.
 
 1. Register at <https://www.goatcounter.com> and pick a site code.
 2. Put that code in `_config.yml` under `goatcounter_code`.
-3. Your dashboard is at `https://<code>.goatcounter.com`. Pageviews, referrers,
-   and countries appear there within seconds of a visit.
+3. Your dashboard is at `https://chesdata.goatcounter.com`. Pageviews, referrers,  and countries appear there within seconds of a visit.
 
-The snippet is already wired into the layout, so every page is tracked once you
-set the code. Set `goatcounter_code:` to empty to switch tracking off.
+The snippet is already wired into the layout, so every page is tracked once you set the code. Set `goatcounter_code:` to empty to switch tracking off.
 
-GoatCounter sets no cookies and stores no IP addresses, so no consent banner is
-needed. Non-commercial use is free.
+GoatCounter sets no cookies and stores no IP addresses, so no consent banner is needed. Non-commercial use is free.
 
 ## 4. Move the data files
 
-Data files go in **Releases**, not in the repo tree. Releases are built for
-distributing binaries, they give each file a permanent download URL, and they
-keep the repo itself small and fast to clone.
+Data files go in **Releases**, not in the repo tree. Releases are built for distributing binaries, they give each file a permanent download URL, and they keep the repo itself small and fast to clone.
 
 1. Repo → **Releases** → *Draft a new release*.
 2. Tag it after the wave, e.g. `ches-2024`.
 3. Drag the `.dta`, `.csv`, and `.pdf` files into the attachments box.
 4. Publish, then right-click each attached file to copy its download URL.
-5. Paste those URLs into the `href` of the matching `.file` links in
-   `ches-europe.md`, `chesla.md`, etc. Right now they all point at the releases
-   page as a placeholder.
-
-Limits worth knowing: individual files are hard-blocked above 100 MB, and
-GitHub asks you to keep total repo size under 1 GB. CHES files are nowhere near
-either number.
-
-Consider also depositing each wave on Zenodo for a permanent DOI. Papers citing
-a DOI rather than a URL will keep resolving regardless of where the site lives.
+5. Paste those URLs into the `href` of the matching `.file` links on that
+   survey's page (`ches-europe.md`, `ches-la.md`, `ches-israel.md`,
+   `ches-canada.md`, `ches-speed.md`). Every dataset currently on the site has already been wired up this way — this step is only for a future wave, or if you re-upload a file under a different name.
 
 ## 5. Point chesdata.eu at it — do this last
 
@@ -92,12 +78,26 @@ Only after the test site looks right.
 
 ---
 
-## URLs are deliberately unchanged
+## URLs
 
-The `permalink` in each file reproduces the existing Squarespace paths
-(`/our-team/`, `/ches-europe/`, `/chesla/`, `/chesisrael/`, `/chescanada/`,
-`/contact-us/`). Published articles cite these URLs, so keeping them means no
-citation breaks at the cutover.
+Most permalinks reproduce the existing Squarespace paths (`/our-team/`,
+`/ches-europe/`, `/contact-us/`) so published citations keep resolving after
+cutover.
+
+Three pages are the exception: CHES-Latin America, CHES-Israel, and
+CHES-Canada moved from their original bare Squarespace paths (`/chesla/`,
+`/chesisrael/`, `/chescanada/`) to hyphenated ones (`/ches-la/`,
+`/ches-israel/`, `/ches-canada/`) for consistency with `/ches-europe/` and the
+rest of the family. Each old path still resolves — `chesla.md`,
+`chesisrael.md`, and `chescanada.md` at the repo root are redirect stubs
+(`layout: null`, a `<meta http-equiv="refresh">`, and a manual fallback link)
+that forward to the new path automatically, so nothing that's already cited
+the old URLs breaks.
+
+If you rename another page's permalink later, add a matching redirect stub
+using one of these three files as a template, and update the internal links
+in `_config.yml`'s `nav:` and any page that links to it — Jekyll won't warn
+you about a link pointing at a path that no longer has real content.
 
 ## Current structure
 

@@ -271,6 +271,9 @@ section + section { border-top: 1px solid var(--rule-soft); }
   padding-top: 2.2rem;
   border-top: 1px solid var(--rule);
   position: relative;
+  /* Offsets the #waves anchor jump from the footer link so the sticky
+     masthead (≈68px) doesn't cover the top of the timeline on landing. */
+  scroll-margin-top: 90px;
 }
 
 .axis-track {
@@ -528,6 +531,13 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 }
 .footer p, .footer li { font-size: .88rem; }
 .footer-note p { color: var(--ink-soft); max-width: 40ch; }
+
+.footer-mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 2px;
+  display: block;
+}
 
 /* --------------------------------------------------------------------------
    Motion preferences

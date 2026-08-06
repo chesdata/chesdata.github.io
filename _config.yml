@@ -1,5 +1,5 @@
 title: Chapel Hill Expert Survey
-description: Expert survey estimates of political party positioning on ideology, policy, and international relations.
+description: Expert survey estimates of political party positioning on ideology and policy.
 url: "https://www.chesdata.eu"
 baseurl: ""
 
@@ -16,7 +16,6 @@ bluesky: chesdata.bsky.social
 goatcounter_code: chesdata
 
 # The GitHub repo that holds the data files as Releases.
-# Update the owner/repo once you create it.
 data_repo: chesdata/chesdata.github.io
 # Landing page for all data downloads. Individual file links on the data
 # pages should eventually point at specific release assets instead.
@@ -27,14 +26,8 @@ shiny_url: "https://chesdata.shinyapps.io/Shiny-CHES/"
 
 # Navigation. Order here is the order in the header.
 #
-# Labels are deliberately short. With eight items plus the CHES Interactive
-# link, the fully spelled-out versions ("CHES-Latin America", "CHES-South
-# Asia") overflow the header on a laptop screen. Every item already sits
-# under the CHES wordmark, so the prefix is redundant here. Page titles are
-# unaffected — those come from each file's own front matter.
-# To go back to the long form, replace the titles below with:
-#   CHES-Europe / CHES-Latin America / CHES-Israel / CHES-Canada /
-#   CHES-South Asia / CHES-USA / SPEED-CHES
+# Labels are deliberately short. With eight items plus the CHES Interactive link, the fully spelled-out versions ("CHES-Latin America", "CHES-South Asia") overflow the header on a laptop screen. Every item already sits under the CHES wordmark, so the prefix is redundant here. Page titles are unaffected — those come from each file's own front matter.
+
 #
 # The team page is intentionally NOT in this list. It still lives at
 # /our-team/ and is linked from the footer and from the CHES-Europe page.
@@ -44,13 +37,13 @@ nav:
   - title: Europe
     url: /ches-europe/
   - title: Latin America
-    url: /chesla/
+    url: /ches-la/
   - title: Israel
-    url: /chesisrael/
+    url: /ches-israel/
   - title: Canada
-    url: /chescanada/
+    url: /ches-canada/
   - title: South Asia
-    url: /ches-south-asia/
+    url: /ches-southasia/
   - title: USA
     url: /ches-usa/
   - title: SPEED-CHES
