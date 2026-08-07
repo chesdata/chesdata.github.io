@@ -100,13 +100,21 @@ you about a link pointing at a path that no longer has real content.
 
 Ten pages build: About (`/`), CHES-Europe, CHES-Latin America, CHES-Israel,
 CHES-Canada, SPEED-CHES, CHES-South Asia, CHES-USA, Team, Contact. The three
-regional pages and both SPEED datasets were pulled from the live chesdata.eu
-and are complete, with citations and DOIs. South Asia and USA are marked
-placeholders — no survey has run yet for either.
+regional pages and all three SPEED waves were pulled from the live chesdata.eu
+and are complete, with citations and DOIs. CHES-Europe carries every wave from
+the 1984–1999 Ray–Marks–Steenbergen survey through 2024. South Asia and USA are
+marked placeholders — no survey has run yet for either.
 
-**Team is not in the header nav.** It's linked from the footer's Explore list
-and from each survey page's "Team" section. Restore it to `nav:` in
-`_config.yml` if you'd rather it stayed in the header.
+**Team is not in the header nav, and nothing else links to it either.** This
+paragraph used to say it was reachable from the footer's Explore list and from
+each survey page's "Team" section. Checked 7 August 2026: it isn't. `/our-team/`
+has zero inbound links from any page — the footer, the nav, and every survey
+page. It builds, it's in `sitemap.xml`, and search engines will index it, but no
+visitor can reach it by clicking.
+
+So it's a decision, not an oversight to fix by halves: either link it — add
+`Team` back to `nav:` in `_config.yml`, or put it in the footer — or drop the
+page. A half-written orphan that only Google can find is the worst of the three.
 
 **Nav labels are short** (`Europe`, `Latin America`, ...) rather than spelled
 out (`CHES-Latin America`), because with eight items plus CHES Interactive the
@@ -116,24 +124,32 @@ in `_config.yml` if you want to revert.
 
 ## What still needs your content
 
-Marked with a bordered note in the page itself:
+Reviewed 7 August 2026. Where a gap is flagged on the page itself, it's marked
+with a bordered note — delete the note once you've filled the section in.
 
-- `our-team.md` — bios for Bakker, Hooghe, Marks, Steenbergen; rest of
-  Vachudova's bio
-- `ches-europe.md` — the 1999, 2002, 2006, 2010, 2014 wave entries, the 2017
-  FLASH survey, and the Balkan candidate country surveys (all confirmed to
-  exist on chesdata.eu, just not yet transcribed here)
-- `speed-ches.md` — what SPEED stands for; a fuller intro to the series if
-  one exists beyond what the two dataset pages say
-- `ches-south-asia.md`, `ches-usa.md` — everything; no survey has been
-  fielded for either yet
-- `index.md` — mission paragraph still says six waves through 2019; doesn't
-  mention Israel, Canada, South Asia, or the USA
-- The homepage photo from Squarespace (`DSC_7147.jpg`) — a decision was made
-  to leave it out for now (see chat history); drop it in `assets/img/` if
-  you change your mind, several treatments were mocked up
+- `ches-speed.md` — what SPEED stands for. The page carries all three waves
+  (2017 FLASH, 2020 COVID-19, 2023 Ukraine) but never expands the acronym. A
+  fuller intro to the series would help too, if one exists beyond what the
+  three dataset entries say.
+- `ches-southasia.md`, `ches-usa.md` — everything; no survey has been fielded
+  for either yet.
+- `our-team.md` — bios for Bakker, Hooghe, Marks, Steenbergen, and the rest of
+  Vachudova's. Worth settling whether the page is linked at all before writing
+  them; see "Current structure" above.
+- The homepage photo from Squarespace (`DSC_7147.jpg`) — deliberately left out
+  for now. Drop it in `assets/img/` if you change your mind; several treatments
+  were mocked up.
 
-Delete each note once you've filled the section in.
+### Done since this list was written
+
+- `index.md` — the mission section is current. It covers seven waves through
+  2024 and names Latin America, Canada, Israel, South Asia, the USA, and SPEED.
+  The old note said it stopped at six waves in 2019.
+- `ches-europe.md` — complete. Every wave has an entry: the 1984–1999
+  Ray–Marks–Steenbergen survey, 1999, 2002, 2006, 2010, 2014, 2019, 2024, plus
+  the 2007, 2014, and 2019 candidate country surveys and the trend file. The
+  2017 FLASH survey isn't missing — it lives on `ches-speed.md`, which is where
+  it belongs.
 
 ## Data files — rescued
 

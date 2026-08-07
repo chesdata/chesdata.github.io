@@ -29,8 +29,10 @@ shiny_url: "https://chesdata.shinyapps.io/Shiny-CHES/"
 # Labels are deliberately short. With eight items plus the CHES Interactive link, the fully spelled-out versions ("CHES-Latin America", "CHES-South Asia") overflow the header on a laptop screen. Every item already sits under the CHES wordmark, so the prefix is redundant here. Page titles are unaffected — those come from each file's own front matter.
 
 #
-# The team page is intentionally NOT in this list. It still lives at
-# /our-team/ and is linked from the footer and from the CHES-Europe page.
+# The team page is intentionally NOT in this list. It still builds and lives at
+# /our-team/, but nothing links to it — not the footer, not the survey pages.
+# This comment used to claim otherwise; checked 7 August 2026 and it was wrong.
+# Add a `- title: Team / url: /our-team/` entry here if you want it reachable.
 nav:
   - title: About
     url: /
