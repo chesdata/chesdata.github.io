@@ -52,6 +52,7 @@ nav:
 exclude:
   - README.md
   - DATA-FILES-TO-RESCUE.md
+  - DNS-CUTOVER.md
   - Gemfile
   - Gemfile.lock
   - _preview

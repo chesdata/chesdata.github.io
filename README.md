@@ -54,27 +54,24 @@ Data files go in **Releases**, not in the repo tree. Releases are built for dist
 
 ## 5. Point chesdata.eu at it — do this last
 
-Only after the test site looks right.
+**See `DNS-CUTOVER.md`.** It has the exact records to change, the values to
+change them to, and the old values to roll back to, all read off live DNS.
 
-1. Add a file named `CNAME` at the repo root containing exactly:
-   ```
-   www.chesdata.eu
-   ```
-2. Update DNS. **Check first where chesdata.eu's DNS is actually managed** —
-   the domain is registered at GoDaddy, but if Squarespace is running the DNS
-   then the nameservers point at Squarespace and that's where records must
-   change, or you move nameservers back to GoDaddy first.
-3. Your canonical URL is already `www.chesdata.eu`, which is the easy case: it
-   needs one `CNAME` record for `www` pointing at `<account>.github.io`. Using
-   the bare `chesdata.eu` as primary instead requires four `A` records with
-   GitHub's IP addresses. **Read the current IPs off GitHub's own docs rather
-   than copying them from anywhere else** — they have changed before:
-   <https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site>
-4. Back in **Settings → Pages**, enter the custom domain, wait for the DNS
-   check to pass, then tick **Enforce HTTPS**. The certificate is issued
-   automatically and is free.
-5. Leave Squarespace active for a week or two. If anything is wrong you can
-   point DNS straight back at it. Cancel only once you're satisfied.
+Three things worth knowing before you open it:
+
+- **DNS is managed at GoDaddy**, not Squarespace. The nameservers are
+  `ns17`/`ns18.domaincontrol.com`. Squarespace hosts the site but doesn't
+  control the records, so nothing needs doing inside Squarespace.
+- **The domain runs Microsoft 365 email.** The cutover changes the four apex
+  `A` records and the `www` `CNAME` and *nothing else*. Do not bulk-delete the
+  Squarespace records — the `MX`, `SPF`, and `autodiscover` records live in the
+  same zone and the mail dies with them.
+- **The `CNAME` file is already committed**, so GitHub Pages redirects
+  `chesdata.github.io` to `www.chesdata.eu` — which is still Squarespace. That
+  means the "look at the test site first" advice above no longer works at that
+  URL. Use `python3 build-preview.py` locally instead, or drop the `CNAME` file
+  temporarily. The deployed build itself was verified page-by-page on
+  7 August 2026 and is sound.
 
 ---
 
