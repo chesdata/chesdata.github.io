@@ -135,8 +135,23 @@ Marked with a bordered note in the page itself:
 
 Delete each note once you've filled the section in.
 
-## Data files still on Squarespace
+## Data files — rescued
 
-See `DATA-FILES-TO-RESCUE.md` — every dataset file for Latin America, Israel,
-and Canada is still hosted at `chesdata.eu/s/...` and will die when the
-Squarespace subscription ends. Download them before cancelling.
+This section used to warn that the Latin America, Israel, and Canada datasets
+were still hosted at `chesdata.eu/s/...` and would die with the Squarespace
+subscription. That's no longer true, and it contradicted
+`DATA-FILES-TO-RESCUE.md`, which records the rescue as finished.
+
+Verified 7 August 2026: no page on the site links to `chesdata.eu/s/` any more.
+Every dataset, codebook, and questionnaire link points at a GitHub Release under
+`github.com/chesdata/chesdata.github.io/releases/download/...`. **Cancelling
+Squarespace costs no data.** See `DATA-FILES-TO-RESCUE.md` for the release tags.
+
+The one Squarespace asset never brought across is the homepage photo
+(`DSC_7147.jpg`), which was deliberately left out — see the note above.
+
+## The domain
+
+chesdata.eu moved from Squarespace to GitHub Pages on 7 August 2026. See
+`DNS-CUTOVER.md` for what changed, what the zone looks like now, and how to roll
+back while the Squarespace subscription is still live.
