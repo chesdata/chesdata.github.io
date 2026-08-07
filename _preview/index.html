@@ -45,7 +45,7 @@
   --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
   --paper:      #F2F2EB;   /* logo cream */
   --surface:    #FFFFFF;
-  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue:       #4C7DC0;   /* logo mid blue, brightened — link hover, focus ring */
   --blue-deep:  #2D4B73;   /* logo navy      — link rest */
   --brass:      #C08D22;   /* graphics only: ticks, rules */
   --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
@@ -374,6 +374,13 @@ a.wave { transition: color .15s ease; }
 a.wave:hover .wave-year { color: var(--blue-deep); }
 a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 
+/* Ticks that hold two surveys in the same year (e.g. 2020, 2023): the year
+   isn't a link, each survey below it is its own link. */
+a.wave-meta { text-decoration: none; border-bottom: 0; transition: color .15s ease; }
+a.wave-meta:hover { color: var(--blue-deep); }
+/* separates the two surveys sharing one tick */
+a.wave-meta + a.wave-meta { margin-top: .5rem; padding-top: .35rem; border-top: 1px solid var(--brass); }
+
 .axis-caption {
   font-family: var(--mono);
   font-size: .68rem;
@@ -638,7 +645,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 <section class="hero">
   <div class="wrap">
     <p class="label">Expert survey data on party positioning</p>
-    <h1>Where parties stand on the issues, measured again and again.</h1>
+    <h1>CHES: Where parties stand on the issues, measured again and again.</h1>
     <p class="lede">The Chapel Hill Expert Survey estimates the positions of national political parties on ideology and policy — in Europe since 1999, and now beyond it.</p>
 
     <div class="axis" id="waves">
@@ -664,30 +671,28 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <span class="wave-year">2014</span>
           <span class="wave-meta">Europe</span>
         </a>
+        <a class="wave" href="speed-ches.html">
+          <span class="wave-year">2017</span>
+          <span class="wave-meta">SPEED<br>Europe</span>
+        </a>
         <a class="wave" href="ches-europe.html">
           <span class="wave-year">2019</span>
           <span class="wave-meta">Europe</span>
         </a>
-        <a class="wave" href="ches-la.html">
+        <div class="wave">
           <span class="wave-year">2020</span>
-          <span class="wave-meta">Latin<br>America</span>
-        </a>
-        <a class="wave" href="speed-ches.html">
-          <span class="wave-year">2020</span>
-          <span class="wave-meta">SPEED<br>Europe</span>
-        </a>
+          <a class="wave-meta" href="ches-la.html">Latin<br>America</a>
+          <a class="wave-meta" href="speed-ches.html">SPEED<br>Covid</a>
+        </div>
         <a class="wave" href="ches-israel.html">
           <span class="wave-year">2022</span>
           <span class="wave-meta">Israel</span>
         </a>
-        <a class="wave" href="ches-canada.html">
+        <div class="wave">
           <span class="wave-year">2023</span>
-          <span class="wave-meta">Canada</span>
-        </a>
-        <a class="wave" href="speed-ches.html">
-          <span class="wave-year">2023</span>
-          <span class="wave-meta">SPEED<br>Europe</span>
-        </a>
+          <a class="wave-meta" href="ches-canada.html">Canada</a>
+          <a class="wave-meta" href="speed-ches.html">SPEED<br>Ukraine</a>
+        </div>
         <a class="wave" href="ches-europe.html">
           <span class="wave-year">2024</span>
           <span class="wave-meta">Europe</span>
@@ -704,9 +709,11 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
     <div class="prose">
       <p>The Chapel Hill expert surveys estimate party positioning on ideology and policy issues for national parties in countries across the world. <a href="ches-europe.html">CHES-Europe</a> covers seven waves: 1999, 2002, 2006, 2010, 2014, 2019, and 2024. The number of countries increased from 14 Western European countries in 1999 to 24 current or prospective EU members in 2006 to 31 countries in 2024. In this time, the number of national parties grew from 143 to 279. The 2024 survey includes all EU member states, plus parties in Iceland, Norway, Switzerland, and Turkey. Separate surveys were conducted in the Balkan candidate countries.</p>
 
-      <p>Questions on parties' general position on European integration, several EU policies, general left/right, economic left/right, and social left/right are common to all CHES-Europe surveys. More recent surveys also contain questions on non-EU policy issues, such as immigration, redistribution, decentralization, and environmental policy.</p>
+      <p>Questions on parties' general position on European integration, several EU policies, general left/right, economic left/right, and social left/right are common to all CHES-Europe surveys. Most surveys also contain questions on non-EU policy issues, such as immigration, redistribution, decentralization, and environmental policy.</p>
 
       <p><a href="ches-la.html">CHES-Latin America</a>, launched in 2020, provides comparable estimates for party positioning on ideology, policy issues, and international relations for 112 national parties in twelve Latin American countries, alongside some region-specific questions. CHES-LA also provides estimates for the position of presidents in these countries.</p>
+      
+      <p>Since 2022, with the help of multiple CHES teams, survey coverage has expanded to <a href="ches-canada.html">CHES-Canada</a>, <a href="ches-israel.html">CHES-Israel</a>, <a href="ches-southasia.html">CHES-South Asia</a>, and the <a href="ches-usa.html">CHES-USA</a>. Each survey covers country or region-specific issues, but also includes a common set of CHES questions.</p>
 
       
     </div>
@@ -738,7 +745,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <p>Six federal parties plus nine provincial parties in Ontario and Quebec, 2023.</p>
           <span class="card-more">Data &amp; codebooks &nearr;</span>
         </a>
-        <a class="card" href="/ches-south-asia/">
+        <a class="card" href="ches-southasia.html">
           <h3>CHES-South Asia</h3>
           <p>In preparation.</p>
           <span class="card-more">Coming soon &nearr;</span>

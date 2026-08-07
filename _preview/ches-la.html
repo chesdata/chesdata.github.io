@@ -45,7 +45,7 @@
   --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
   --paper:      #F2F2EB;   /* logo cream */
   --surface:    #FFFFFF;
-  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue:       #4C7DC0;   /* logo mid blue, brightened — link hover, focus ring */
   --blue-deep:  #2D4B73;   /* logo navy      — link rest */
   --brass:      #C08D22;   /* graphics only: ticks, rules */
   --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
@@ -374,6 +374,13 @@ a.wave { transition: color .15s ease; }
 a.wave:hover .wave-year { color: var(--blue-deep); }
 a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 
+/* Ticks that hold two surveys in the same year (e.g. 2020, 2023): the year
+   isn't a link, each survey below it is its own link. */
+a.wave-meta { text-decoration: none; border-bottom: 0; transition: color .15s ease; }
+a.wave-meta:hover { color: var(--blue-deep); }
+/* separates the two surveys sharing one tick */
+a.wave-meta + a.wave-meta { margin-top: .5rem; padding-top: .35rem; border-top: 1px solid var(--brass); }
+
 .axis-caption {
   font-family: var(--mono);
   font-size: .68rem;
@@ -639,7 +646,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
   <div class="wrap">
     <p class="label">CHES-Latin America</p>
     <h1>Parties and presidents across twelve countries.</h1>
-    <p class="lede">Comparable estimates of party positioning on ideology, policy, and international relations, plus estimates for the position of presidents.</p>
+    <p class="lede">Comparable estimates of party and president positions on ideology and policy in Latin America.</p>
   </div>
 </section>
 
@@ -647,9 +654,9 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
   <div class="wrap split">
     <div><p class="label">About the survey</p></div>
     <div class="prose">
-      <p>Administered in 2020 and completed by 160 experts specializing in political parties, the 2020 CHES LA dataset provides information about the positioning of 112 political parties and presidents on political ideology, policy positions, party characteristics, and party linkages. The survey covers political parties and presidents in 12 Latin American countries.</p>
+      <p>Administered in 2020 and completed by 160 experts specializing in political parties, the 2020 CHES-LA dataset provides information about the positioning of 112 political parties and presidents on political ideology, policy positions, party characteristics, and party linkages. The survey covers political parties and presidents in 12 Latin American countries.</p>
 
-      <p>The CHES LA 2020 can be combined with CHES 2019, allowing researchers to directly compare European and Latin American parties across a wide range of dimensions.</p>
+      <p>CHES-LA 2020 can be combined with CHES-Europe 2019, allowing researchers to directly compare European and Latin American parties across a wide range of dimensions.</p>
     </div>
   </div>
 </section>
@@ -684,7 +691,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-la/2020_ches_la_questionnaire_spanish.pdf">Sample questionnaire (Spanish)<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-la/2020_ches_la_questionnaire_portuguese.pdf">Sample questionnaire (Portuguese)<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Martínez-Gallardo, Cecilia, Nicolás de la Cerda, Jonathan Hartlyn, Liesbet Hooghe, Gary Marks, and Ryan Bakker. 2022. "Revisiting party system structuration in Latin America and Europe: Economic and socio-cultural dimensions." <em>Party Politics</em> 0(0): 1&ndash;13. <a href="https://doi.org/10.1177/13540688221090604">doi:10.1177/13540688221090604</a></p>
+        <p class="cite">When using the 2020 survey, please cite: Martínez-Gallardo, Cecilia, Nicolás de la Cerda, Jonathan Hartlyn, Liesbet Hooghe, Gary Marks, and Ryan Bakker. 2022. "Revisiting party system structuration in Latin America and Europe: Economic and socio-cultural dimensions." <em>Party Politics</em> 0(0): 1&ndash;13. <a href="https://doi.org/10.1177/13540688221090604">doi:10.1177/13540688221090604</a></p>
         <p class="cite">Using CHES-LA 2020 together with CHES-Europe 2019, also cite: Jolly, Seth, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Chapel Hill Expert Survey Trend File, 1999&ndash;2019." <em>Electoral Studies</em> 75 (February). <a href="https://doi.org/10.1016/j.electstud.2021.102420">doi:10.1016/j.electstud.2021.102420</a></p>
       </div>
 

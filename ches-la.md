@@ -17,9 +17,9 @@ description: Expert survey estimates of party and presidential positioning in tw
   <div class="wrap split">
     <div><p class="label">About the survey</p></div>
     <div class="prose">
-      <p>Administered in 2020 and completed by 160 experts specializing in political parties, the 2020 CHES LA dataset provides information about the positioning of 112 political parties and presidents on political ideology, policy positions, party characteristics, and party linkages. The survey covers political parties and presidents in 12 Latin American countries.</p>
+      <p>Administered in 2020 and completed by 160 experts specializing in political parties, the 2020 CHES-LA dataset provides information about the positioning of 112 political parties and presidents on political ideology, policy positions, party characteristics, and party linkages. The survey covers political parties and presidents in 12 Latin American countries.</p>
 
-      <p>The CHES LA 2020 can be combined with CHES 2019, allowing researchers to directly compare European and Latin American parties across a wide range of dimensions.</p>
+      <p>CHES-LA 2020 can be combined with CHES-Europe 2019, allowing researchers to directly compare European and Latin American parties across a wide range of dimensions.</p>
     </div>
   </div>
 </section>

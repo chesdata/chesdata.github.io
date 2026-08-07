@@ -45,7 +45,7 @@
   --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
   --paper:      #F2F2EB;   /* logo cream */
   --surface:    #FFFFFF;
-  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue:       #4C7DC0;   /* logo mid blue, brightened — link hover, focus ring */
   --blue-deep:  #2D4B73;   /* logo navy      — link rest */
   --brass:      #C08D22;   /* graphics only: ticks, rules */
   --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
@@ -374,6 +374,13 @@ a.wave { transition: color .15s ease; }
 a.wave:hover .wave-year { color: var(--blue-deep); }
 a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 
+/* Ticks that hold two surveys in the same year (e.g. 2020, 2023): the year
+   isn't a link, each survey below it is its own link. */
+a.wave-meta { text-decoration: none; border-bottom: 0; transition: color .15s ease; }
+a.wave-meta:hover { color: var(--blue-deep); }
+/* separates the two surveys sharing one tick */
+a.wave-meta + a.wave-meta { margin-top: .5rem; padding-top: .35rem; border-top: 1px solid var(--brass); }
+
 .axis-caption {
   font-family: var(--mono);
   font-size: .68rem;
@@ -678,7 +685,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-israel/CHES_ISR_Codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-israel/Qualtrics%2BSurvey-Israel2022.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Zur, Roi, and Ryan Bakker. 2023. "The Israeli parties' positions in comparative perspective." <em>Party Politics</em> 0(0). <a href="https://doi.org/10.1177/13540688231218917">doi:10.1177/13540688231218917</a></p>
+        <p class="cite">When using the 2021/22 survey, please cite: Zur, Roi, and Ryan Bakker. 2023. "The Israeli parties' positions in comparative perspective." <em>Party Politics</em> 0(0). <a href="https://doi.org/10.1177/13540688231218917">doi:10.1177/13540688231218917</a></p>
         <p class="cite">Using CHES-Israel 2021/2022 together with CHES-Europe 2019, also cite: Jolly, Seth, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Chapel Hill Expert Survey Trend File, 1999&ndash;2019." <em>Electoral Studies</em> 75 (February). <a href="https://doi.org/10.1016/j.electstud.2021.102420">doi:10.1016/j.electstud.2021.102420</a></p>
       </div>
 

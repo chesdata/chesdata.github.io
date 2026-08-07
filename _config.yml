@@ -54,6 +54,10 @@ exclude:
   - DATA-FILES-TO-RESCUE.md
   - Gemfile
   - Gemfile.lock
+  - _preview
+  - build-preview.py
+  - check-links.sh
+  - urls.txt
 
 # Jekyll defaults
 markdown: kramdown

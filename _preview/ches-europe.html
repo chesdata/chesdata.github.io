@@ -4,13 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>CHES-Europe — Chapel Hill Expert Survey</title>
-  <meta name="description" content="Twelve datasets of expert survey estimates of European party positioning, 1984 to 2024, with codebooks and a merged trend file from 1999 to 2024.">
+  <meta name="description" content="Eight datasets of expert survey estimates of European party positioning, 1984 to 2024, with codebooks and a merged trend file from 1999 to 2024.">
 
   <!-- Open Graph. Bluesky's card service reads these; it has no tags of its
        own, so this one set covers Bluesky, Mastodon, Slack and LinkedIn. -->
     <meta property="og:site_name" content="Chapel Hill Expert Survey">
   <meta property="og:title" content="CHES-Europe">
-  <meta property="og:description" content="Twelve datasets of expert survey estimates of European party positioning, 1984 to 2024, with codebooks and a merged trend file from 1999 to 2024.">
+  <meta property="og:description" content="Eight datasets of expert survey estimates of European party positioning, 1984 to 2024, with codebooks and a merged trend file from 1999 to 2024.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.chesdata.eu/ches-europe/">
   <meta property="og:image" content="https://www.chesdata.eu/assets/img/og-image.png">
@@ -45,7 +45,7 @@
   --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
   --paper:      #F2F2EB;   /* logo cream */
   --surface:    #FFFFFF;
-  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue:       #4C7DC0;   /* logo mid blue, brightened — link hover, focus ring */
   --blue-deep:  #2D4B73;   /* logo navy      — link rest */
   --brass:      #C08D22;   /* graphics only: ticks, rules */
   --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
@@ -374,6 +374,13 @@ a.wave { transition: color .15s ease; }
 a.wave:hover .wave-year { color: var(--blue-deep); }
 a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 
+/* Ticks that hold two surveys in the same year (e.g. 2020, 2023): the year
+   isn't a link, each survey below it is its own link. */
+a.wave-meta { text-decoration: none; border-bottom: 0; transition: color .15s ease; }
+a.wave-meta:hover { color: var(--blue-deep); }
+/* separates the two surveys sharing one tick */
+a.wave-meta + a.wave-meta { margin-top: .5rem; padding-top: .35rem; border-top: 1px solid var(--brass); }
+
 .axis-caption {
   font-family: var(--mono);
   font-size: .68rem;
@@ -638,8 +645,8 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 <section class="pagehead">
   <div class="wrap">
     <p class="label">CHES-Europe</p>
-    <h1>Forty years of party positional data.</h1>
-    <p class="lede">Expert placements of party positions on general left-right, economic left-right, GAL-TAN (Green/Alternative/Libertarian-Tradition/Authoritarian/Nationalist), and European integration are common to every wave, with specific issue positions available since 1999.</p>
+    <h1>25+ years of party position data.</h1>
+    <p class="lede">Expert placements of party positions on general left-right, economic left-right, GAL-TAN, and European integration are common to every wave, with specific issue positions available since 1999.</p>
   </div>
 </section>
 
@@ -647,7 +654,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
   <div class="wrap split">
     <div><p class="label">About the series</p></div>
     <div class="prose">
-      <p>Questions on parties' general position on European integration, several EU policies, general left-right, economic left-right, and GAL-TAN are common to all surveys. More recent surveys also contain questions on non-EU policy issues, such as anti-elite rhetoric, immigration, redistribution, decentralization, and environmental policy. More information about the survey and the trend file can be found in the codebook.</p>
+      <p>Questions on parties' general position on European integration, several EU policies, general left-right, economic left-right, and GAL-TAN (Green/Alternative/Libertarian-Tradition/Authoritarian/Nationalist) are common to all surveys. More recent surveys also contain questions on non-EU policy issues, such as anti-elite rhetoric, immigration, redistribution, decentralization, and environmental policy. More information about the survey and the trend file can be found in the codebook.</p>
 
       <p>The number of countries increased from 14 Western European countries in 1999 to 24 current or prospective EU members in 2006 to 31 countries in 2024. In this time, the number of national parties grew from 143 to 279. The 1999&ndash;2024 trend survey includes all EU member states except Luxembourg, plus the United Kingdom.</p>
 
@@ -659,8 +666,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
   <div class="wrap split">
     <div><p class="label">Survey team</p></div>
     <div class="prose">
-      <p>The current co-principal investigators include Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. Earlier waves also involved Anna Brigevich, Catherine de Vries, Erica Edwards, Jelle Koedam, Filip Kostelka, Moira Nelson, Gijs Schumacher, David Scott, Carole Wilson, and Marko Zilovic &mdash; see each dataset above for the team that produced it.</p>
-      <p><a href="our-team.html">Full team &nearr;</a></p>
+      <p>The current co-principal investigators include Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. Earlier wave survey teams included Anna Brigevich, Catherine de Vries, Erica Edwards, Jelle Koedam, Filip Kostelka, Moira Nelson, Gijs Schumacher, David Scott, Carole Wilson, and Marko Zilovic &mdash; see each dataset above for the team that produced it.</p>
     </div>
   </div>
 </section>
@@ -673,13 +679,13 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
       <div class="dataset">
         <h3>Trend file, 1999&ndash;2024</h3>
         <p class="dataset-meta">Seven waves &middot; merged &middot; Stata + CSV + codebook</p>
-        <p>All CHES-Europe waves in a single file, using the common country code and party id schema. This is the file most users want.</p>
+        <p>All CHES-Europe waves in a single file, using the common country code and party id schema. The trend file also includes common supplemental variables, such as party family, vote share, seat share, and government status.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-trend/1999-2024_CHES_dataset_meansV2.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-trend/1999-2024_CHES_dataset_meansV2.csv">Dataset<span class="ext">.csv</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-trend/1999-2024_CHES_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
+        <p class="cite">When using the 1999&ndash;2024 trend file, please cite: Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
       </div>
 
       <div class="dataset">
@@ -694,14 +700,13 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES.2024.Codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES_2024_UK_Qualtrics.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
-        <p class="cite">When using the 1999&ndash;2019 trend file, also cite: Jolly, Seth, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Chapel Hill Expert Survey Trend File, 1999&ndash;2019." <em>Electoral Studies</em> 75 (February). <a href="https://doi.org/10.1016/j.electstud.2021.102420">doi:10.1016/j.electstud.2021.102420</a></p>
+        <p class="cite">When using the 2024 survey, please cite: Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
       </div>
 
       <div class="dataset">
         <h3>2019 Chapel Hill Expert Survey</h3>
         <p class="dataset-meta">Fielded winter 2020 &middot; 421 experts &middot; 277 parties &middot; 32 countries</p>
-        <p>Administered in winter 2020 and completed by 421 political scientists specializing in political parties and European integration, the 2019 CHES provides information about the positioning of 277 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 32 countries, including all European Union member states, plus Iceland, Norway, Switzerland and Turkey.</p>
+        <p>Administered in winter 2020 and completed by 421 political scientists specializing in political parties and European integration, the 2019 CHES provides information about the positioning of 277 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 32 countries, including all European Union member states, plus Iceland, Norway, Switzerland, and Turkey.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES2019V3.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES2019V3.csv">Dataset<span class="ext">.csv</span></a>
@@ -710,7 +715,8 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2019_CHES_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES_UK_Qualtrics.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">When using the 2019 expert survey, cite: Jolly, Seth, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. Forthcoming. "Chapel Hill Expert Survey Trend File, 1999&ndash;2019." <em>Electoral Studies</em>. <a href="https://doi.org/10.1016/j.electstud.2021.102420">doi:10.1016/j.electstud.2021.102420</a></p>
+              <p class="cite">When using the 2019 survey, please cite: Jolly, Seth, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Chapel Hill Expert Survey Trend File, 1999&ndash;2019." <em>Electoral Studies</em> 75 (February). <a href="https://doi.org/10.1016/j.electstud.2021.102420">doi:10.1016/j.electstud.2021.102420</a></p>
+        
       </div>
 
       <div class="dataset">
@@ -725,13 +731,13 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2019_CHES_Candidate_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/Bosnia_Survey_text.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Bakker, Ryan, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2020. "2019 Chapel Hill Candidate Survey." Version 2019.1. Chapel Hill, NC: University of North Carolina, Chapel Hill.</p>
+              <p class="cite">When using the 2019 survey, please cite: Jolly, Seth, Ryan Bakker, Liesbet Hooghe, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Chapel Hill Expert Survey Trend File, 1999&ndash;2019." <em>Electoral Studies</em> 75 (February). <a href="https://doi.org/10.1016/j.electstud.2021.102420">doi:10.1016/j.electstud.2021.102420</a></p>
       </div>
 
       <div class="dataset">
         <h3>2014 Chapel Hill Expert Survey</h3>
         <p class="dataset-meta">Fielded fall 2014 &middot; 337 experts &middot; 268 parties &middot; 31 countries</p>
-        <p>Administered in the fall of 2014 to 337 political scientists specializing in political parties and European integration, the 2014 CHES provides information about the positioning of 268 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 31 countries, including all European Union member states, plus Norway, Switzerland and Turkey.</p>
+        <p>Administered in the fall of 2014 to 337 political scientists specializing in political parties and European integration, the 2014 CHES provides information about the positioning of 268 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 31 countries, including all European Union member states, plus Norway, Switzerland, and Turkey.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2014_CHES_dataset_means-2.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2014_CHES_dataset_means.csv">Dataset<span class="ext">.csv</span></a>
@@ -740,7 +746,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2014_CHES_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/Belgium_Questionnaire_2014.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Polk, Jonathan, Jan Rovny, Ryan Bakker, Erica Edwards, Liesbet Hooghe, Seth Jolly, Jelle Koedam, Filip Kostelka, Gary Marks, Gijs Schumacher, Marco Steenbergen, Milada Anna Vachudova, and Marko Zilovic. 2017. "Explaining the salience of anti-elitism and reducing political corruption for political parties in Europe with the 2014 Chapel Hill Expert Survey data." <em>Research &amp; Politics</em> (January&ndash;March): 1&ndash;9.</p>
+        <p class="cite">When using the 2014 survey, please cite: Polk, Jonathan, Jan Rovny, Ryan Bakker, Erica Edwards, Liesbet Hooghe, Seth Jolly, Jelle Koedam, Filip Kostelka, Gary Marks, Gijs Schumacher, Marco Steenbergen, Milada Anna Vachudova, and Marko Zilovic. 2017. "Explaining the salience of anti-elitism and reducing political corruption for political parties in Europe with the 2014 Chapel Hill Expert Survey data." <em>Research &amp; Politics</em> (January&ndash;March): 1&ndash;9.</p>
       </div>
 
       <div class="dataset">
@@ -755,12 +761,12 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2014_CHES_Candidate_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/Ukraine_Questionnaire_2014.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Polk, Jonathan, Jan Rovny, Ryan Bakker, Erica Edwards, Liesbet Hooghe, Seth Jolly, Jelle Koedam, Filip Kostelka, Gary Marks, Gijs Schumacher, Marco Steenbergen, Milada Anna Vachudova, and Marko Zilovic. 2017. "Explaining the salience of anti-elitism and reducing political corruption for political parties in Europe with the 2014 Chapel Hill Expert Survey data." <em>Research &amp; Politics</em> (January&ndash;March): 1&ndash;9.</p>      </div>
+        <p class="cite">When using the 2014 survey, please cite: Polk, Jonathan, Jan Rovny, Ryan Bakker, Erica Edwards, Liesbet Hooghe, Seth Jolly, Jelle Koedam, Filip Kostelka, Gary Marks, Gijs Schumacher, Marco Steenbergen, Milada Anna Vachudova, and Marko Zilovic. 2017. "Explaining the salience of anti-elitism and reducing political corruption for political parties in Europe with the 2014 Chapel Hill Expert Survey data." <em>Research &amp; Politics</em> (January&ndash;March): 1&ndash;9.</p>      </div>
 
       <div class="dataset">
         <h3>2010 Chapel Hill Expert Survey</h3>
         <p class="dataset-meta">Fielded spring 2011 &middot; 237 parties &middot; 28 countries</p>
-        <p>Collects policy and ideological stances of the leadership of national political parties for all EU member states other than Cyprus, Luxembourg and Malta, plus Norway, Switzerland, Croatia, and Turkey. Covers 237 national parties in 28 countries.</p>
+        <p>Collects policy and ideological stances of the leadership of national political parties for all EU member states other than Cyprus, Luxembourg, and Malta, plus Norway, Switzerland, Croatia, and Turkey. Covers 237 national parties in 28 countries.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2010_CHES_dataset_means.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2010_CHES_dataset_means.csv">Dataset<span class="ext">.csv</span></a>
@@ -769,7 +775,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2010_CHES_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2010_CHES_questionnaire.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Bakker, Ryan, Catherine de Vries, Erica Edwards, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2015. "Measuring Party Positions in Europe: The Chapel Hill Expert Survey Trend File, 1999&ndash;2010." <em>Party Politics</em> 21.1: 143&ndash;152.</p>      </div>
+        <p class="cite">When using the 2010 survey, please cite: Bakker, Ryan, Catherine de Vries, Erica Edwards, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2015. "Measuring Party Positions in Europe: The Chapel Hill Expert Survey Trend File, 1999&ndash;2010." <em>Party Politics</em> 21.1: 143&ndash;152.</p>      </div>
 
       <div class="dataset">
         <h3>2007 Candidate Countries Survey</h3>
@@ -784,7 +790,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2007_CHES-candidates_codebook_expert-level.pdf">Expert-level codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2007_CHES-candidates_questionnaire.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>
+        <p class="cite">When using the 2007 survey, please cite: Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>
       </div>
 
       <div class="dataset">
@@ -800,7 +806,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2006_CHES_codebook_expert-level.pdf">Expert-level codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2006_CHES_questionnaire.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>      </div>
+        <p class="cite">When using the 2006 survey, please cite: Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>      </div>
 
       <div class="dataset">
         <h3>2002 Chapel Hill Expert Survey</h3>
@@ -817,7 +823,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2002_CHES_questionnaire_west.pdf">Sample questionnaire (West)<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2002_CHES_questionnaire_east.pdf">Sample questionnaire (East)<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>      </div>
+        <p class="cite">When using the 2002 survey, please cite: Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>      </div>
 
       <div class="dataset">
         <h3>1999 Chapel Hill Expert Survey</h3>
@@ -831,7 +837,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/1999_CHES_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/1999_CHES_questionnaire.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Steenbergen, Marco, and Gary Marks. 2007. "Evaluating Expert Judgments." <em>European Journal of Political Research</em> 46.3: 347&ndash;366.</p>      </div>
+        <p class="cite">When using the 1999 survey, please cite: Steenbergen, Marco, and Gary Marks. 2007. "Evaluating Expert Judgments." <em>European Journal of Political Research</em> 46.3: 347&ndash;366.</p>      </div>
 
       <div class="dataset">
         <h3>Ray&ndash;Marks&ndash;Steenbergen Survey, 1984&ndash;1999</h3>
@@ -842,8 +848,8 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/1984-1999_dataset_means.csv">Dataset<span class="ext">.csv</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/1984-1999_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Steenbergen, Marco, and Gary Marks. 2007. "Evaluating Expert Judgments." <em>European Journal of Political Research</em> 46.3: 347&ndash;366; and Ray, Leonard. 1999. "Measuring party orientations toward European integration: Results from an expert survey." <em>European Journal of Political Research</em> 36.2: 283&ndash;306.</p>
-        <p><span class="dataset-meta">Team:</span> Leonard Ray, Gary Marks, Marco Steenbergen.</p>
+        <p class="cite">When using the 1984&ndash;1996 and 1999 survey, please cite: Steenbergen, Marco, and Gary Marks. 2007. "Evaluating Expert Judgments." <em>European Journal of Political Research</em> 46.3: 347&ndash;366; and Ray, Leonard. 1999. "Measuring party orientations toward European integration: Results from an expert survey." <em>European Journal of Political Research</em> 36.2: 283&ndash;306.</p>
+
       </div>
 
 

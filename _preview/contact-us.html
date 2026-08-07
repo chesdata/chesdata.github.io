@@ -45,7 +45,7 @@
   --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
   --paper:      #F2F2EB;   /* logo cream */
   --surface:    #FFFFFF;
-  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue:       #4C7DC0;   /* logo mid blue, brightened — link hover, focus ring */
   --blue-deep:  #2D4B73;   /* logo navy      — link rest */
   --brass:      #C08D22;   /* graphics only: ticks, rules */
   --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
@@ -373,6 +373,13 @@ section + section { border-top: 1px solid var(--rule-soft); }
 a.wave { transition: color .15s ease; }
 a.wave:hover .wave-year { color: var(--blue-deep); }
 a.wave:hover::before { background: var(--blue); height: 1.15rem; }
+
+/* Ticks that hold two surveys in the same year (e.g. 2020, 2023): the year
+   isn't a link, each survey below it is its own link. */
+a.wave-meta { text-decoration: none; border-bottom: 0; transition: color .15s ease; }
+a.wave-meta:hover { color: var(--blue-deep); }
+/* separates the two surveys sharing one tick */
+a.wave-meta + a.wave-meta { margin-top: .5rem; padding-top: .35rem; border-top: 1px solid var(--brass); }
 
 .axis-caption {
   font-family: var(--mono);

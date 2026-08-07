@@ -17,7 +17,7 @@ description: Expert survey estimates of Canadian federal and provincial party po
   <div class="wrap split">
     <div><p class="label">About the survey</p></div>
     <div class="prose">
-      <p>This dataset provides the data for the 2023 Chapel Hill Expert Survey (CHES) Canada on the positioning of six federal political parties on political ideology and policy positions, as well as nine provincial parties in Ontario and Quebec. The data were collected between 5 December 2022 and 20 January 2023, with the survey asking experts to indicate parties' current positions.</p>
+      <p>This dataset provides the data for the 2023 Chapel Hill Expert Survey (CHES) Canada on the positioning of 6 federal political parties on political ideology and policy positions, as well as 9 provincial parties in Ontario and Quebec. The data were collected between 5 December 2022 and 20 January 2023, with the survey asking experts to indicate parties' current positions.</p>
 
       <p>99 experts were contacted and 44 surveys were completed, yielding a 44.4 percent response rate.</p>
     </div>

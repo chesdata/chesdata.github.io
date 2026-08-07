@@ -48,7 +48,7 @@ description: Eight datasets of expert survey estimates of European party positio
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-trend/1999-2024_CHES_dataset_meansV2.csv">Dataset<span class="ext">.csv</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-trend/1999-2024_CHES_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">When using the 1999&ndash;2024 trend file, cite: Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
+        <p class="cite">When using the 1999&ndash;2024 trend file, please cite: Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
       </div>
 
       <div class="dataset">
@@ -63,13 +63,13 @@ description: Eight datasets of expert survey estimates of European party positio
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES.2024.Codebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES_2024_UK_Qualtrics.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">When using the 2024 survey, pleasecite: Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
+        <p class="cite">When using the 2024 survey, please cite: Rovny, Jan, Jonathan Polk, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Marco Steenbergen, and Milada Anna Vachudova. 2025. "The 2024 Chapel Hill Expert Survey on political party positioning in Europe: Twenty-five years of party positional data." <em>Electoral Studies</em> 97 (October). <a href="https://doi.org/10.1016/j.electstud.2025.102981">doi:10.1016/j.electstud.2025.102981</a></p>
       </div>
 
       <div class="dataset">
         <h3>2019 Chapel Hill Expert Survey</h3>
         <p class="dataset-meta">Fielded winter 2020 &middot; 421 experts &middot; 277 parties &middot; 32 countries</p>
-        <p>Administered in winter 2020 and completed by 421 political scientists specializing in political parties and European integration, the 2019 CHES provides information about the positioning of 277 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 32 countries, including all European Union member states, plus Iceland, Norway, Switzerland and Turkey.</p>
+        <p>Administered in winter 2020 and completed by 421 political scientists specializing in political parties and European integration, the 2019 CHES provides information about the positioning of 277 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 32 countries, including all European Union member states, plus Iceland, Norway, Switzerland, and Turkey.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES2019V3.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/CHES2019V3.csv">Dataset<span class="ext">.csv</span></a>
@@ -100,7 +100,7 @@ description: Eight datasets of expert survey estimates of European party positio
       <div class="dataset">
         <h3>2014 Chapel Hill Expert Survey</h3>
         <p class="dataset-meta">Fielded fall 2014 &middot; 337 experts &middot; 268 parties &middot; 31 countries</p>
-        <p>Administered in the fall of 2014 to 337 political scientists specializing in political parties and European integration, the 2014 CHES provides information about the positioning of 268 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 31 countries, including all European Union member states, plus Norway, Switzerland and Turkey.</p>
+        <p>Administered in the fall of 2014 to 337 political scientists specializing in political parties and European integration, the 2014 CHES provides information about the positioning of 268 parties on political ideology, European integration, and various policy areas. The survey covers political parties in 31 countries, including all European Union member states, plus Norway, Switzerland, and Turkey.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2014_CHES_dataset_means-2.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2014_CHES_dataset_means.csv">Dataset<span class="ext">.csv</span></a>
@@ -129,7 +129,7 @@ description: Eight datasets of expert survey estimates of European party positio
       <div class="dataset">
         <h3>2010 Chapel Hill Expert Survey</h3>
         <p class="dataset-meta">Fielded spring 2011 &middot; 237 parties &middot; 28 countries</p>
-        <p>Collects policy and ideological stances of the leadership of national political parties for all EU member states other than Cyprus, Luxembourg and Malta, plus Norway, Switzerland, Croatia, and Turkey. Covers 237 national parties in 28 countries.</p>
+        <p>Collects policy and ideological stances of the leadership of national political parties for all EU member states other than Cyprus, Luxembourg, and Malta, plus Norway, Switzerland, Croatia, and Turkey. Covers 237 national parties in 28 countries.</p>
         <div class="files">
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2010_CHES_dataset_means.dta">Dataset<span class="ext">.dta</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2010_CHES_dataset_means.csv">Dataset<span class="ext">.csv</span></a>
@@ -153,7 +153,7 @@ description: Eight datasets of expert survey estimates of European party positio
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2007_CHES-candidates_codebook_expert-level.pdf">Expert-level codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/2007_CHES-candidates_questionnaire.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">When using the 2006 survey, please cite: Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>
+        <p class="cite">When using the 2007 survey, please cite: Hooghe, Liesbet, Ryan Bakker, Anna Brigevich, Catherine de Vries, Erica Edwards, Gary Marks, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2010. "Reliability and Validity of Measuring Party Positions: The Chapel Hill Expert Surveys of 2002 and 2006." <em>European Journal of Political Research</em> 49: 684&ndash;703.</p>
       </div>
 
       <div class="dataset">
@@ -211,8 +211,7 @@ description: Eight datasets of expert survey estimates of European party positio
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/1984-1999_dataset_means.csv">Dataset<span class="ext">.csv</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-europe/1984-1999_codebook.pdf">Codebook<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">When using the 1984-1986 and 1999s survey, please cite: Steenbergen, Marco, and Gary Marks. 2007. "Evaluating Expert Judgments." <em>European Journal of Political Research</em> 46.3: 347&ndash;366; and Ray, Leonard. 1999. "Measuring party orientations toward European integration: Results from an expert survey." <em>European Journal of Political Research</em> 36.2: 283&ndash;306.</p>
-        <p class="cite">Ray, Leonard. 1999. "Measuring party orientations toward European integration: Results from an expert survey." <em>European Journal of Political Research</em> 36.2: 283&ndash;306.</p>
+        <p class="cite">When using the 1984&ndash;1996 and 1999 survey, please cite: Steenbergen, Marco, and Gary Marks. 2007. "Evaluating Expert Judgments." <em>European Journal of Political Research</em> 46.3: 347&ndash;366; and Ray, Leonard. 1999. "Measuring party orientations toward European integration: Results from an expert survey." <em>European Journal of Political Research</em> 36.2: 283&ndash;306.</p>
 
       </div>
 

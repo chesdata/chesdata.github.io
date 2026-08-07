@@ -45,7 +45,7 @@
   --ink-faint:  #546B82;   /* 4.91:1 on --paper; was #7B8B92 at 3.14:1 */
   --paper:      #F2F2EB;   /* logo cream */
   --surface:    #FFFFFF;
-  --blue:       #3F6CA6;   /* logo mid blue  — link hover, focus ring */
+  --blue:       #4C7DC0;   /* logo mid blue, brightened — link hover, focus ring */
   --blue-deep:  #2D4B73;   /* logo navy      — link rest */
   --brass:      #C08D22;   /* graphics only: ticks, rules */
   --brass-deep: #946C1A;   /* same hue for text; 4.75:1 on --surface */
@@ -374,6 +374,13 @@ a.wave { transition: color .15s ease; }
 a.wave:hover .wave-year { color: var(--blue-deep); }
 a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 
+/* Ticks that hold two surveys in the same year (e.g. 2020, 2023): the year
+   isn't a link, each survey below it is its own link. */
+a.wave-meta { text-decoration: none; border-bottom: 0; transition: color .15s ease; }
+a.wave-meta:hover { color: var(--blue-deep); }
+/* separates the two surveys sharing one tick */
+a.wave-meta + a.wave-meta { margin-top: .5rem; padding-top: .35rem; border-top: 1px solid var(--brass); }
+
 .axis-caption {
   font-family: var(--mono);
   font-size: .68rem;
@@ -638,8 +645,8 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
 <section class="pagehead">
   <div class="wrap">
     <p class="label">SPEED-CHES</p>
-    <h1>Party positions, measured quickly.</h1>
-    <p class="lede">Shorter surveys run between the main CHES waves, each asking experts about party positioning on a single development or a reduced set of questions.</p>
+    <h1>SPEcial EDition CHES surveys</h1>
+    <p class="lede">Shorter surveys run between the main CHES waves, each asking experts about party positioning on a single event or a narrow set of issues.</p>
   </div>
 </section>
 
@@ -647,7 +654,7 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
   <div class="wrap split">
     <div><p class="label">About the series</p></div>
     <div class="prose">
-      <p>SPEED doesn't stand for anything &mdash; it simply means the survey was administered quickly. Each SPEED survey asks a panel of political scientists specialising in political parties and European integration about party positions on a single issue or a reduced question set, alongside general ideological positions, so the results can be read against the main <a href="ches-europe.html">CHES-Europe</a> waves. The first, in 2017, was a FLASH survey with a smaller country set; the 2020 and 2023 waves each focus on a single event &mdash; the COVID-19 pandemic and the Russian invasion of Ukraine.</p>
+      <p>SPEcial EDition CHES are short, targeted surveys on specific topics or events. Each SPEED survey asks a panel of political scientists specialising in political parties and European integration about party positions on a single issue or a reduced question set, alongside general ideological positions, so the results can be read alongside the main <a href="ches-europe.html">CHES-Europe</a> waves. The first, in 2017, was a FLASH survey with a smaller country and issue set; the 2020 and 2023 waves each focus on a single event &mdash; the COVID-19 pandemic and the Russian invasion of Ukraine.</p>
     </div>
   </div>
 </section>
@@ -667,20 +674,18 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
     <div>
 
       <div class="dataset">
-        <h3>2017 Chapel Hill Expert FLASH Survey</h3>
-        <p class="dataset-meta">Fielded Jan&ndash;Feb 2018, on 2017 positions &middot; reduced country set</p>
-        <p>Carried out in January and February 2018, asking about party positions in 2017. A reduced survey focusing on a smaller set of EU member states, asking the standard EU placement and economic/social positioning questions, plus the key issues facing Europe in 2017: EU economic coordination, populism, and migration.</p>
+        <h3>2023 SPEED CHES &mdash; Ukraine</h3>
+        <p class="dataset-meta">Fielded June 2023 &middot; 217 experts &middot; 274 parties &middot; 30 countries</p>
+        <p>Administered in June 2023 and completed by 217 political scientists specializing in political parties and European integration, this survey provides information about the positioning of 274 parties on policies related to the Russian invasion of Ukraine, along with general ideological positions. The survey covers political parties in 30 countries, including all European Union member states except Luxembourg and Cyprus, plus Iceland, Norway, Switzerland, Turkey, and the United Kingdom. The dataset adopts the country code and party id schema of the CHES trend file, with extensions for newly covered parties, so it can be merged with the trend file.</p>
         <div class="files">
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_means_2017.dta">Dataset<span class="ext">.dta</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_means_2017.csv">Dataset<span class="ext">.csv</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/combined_experts_2017.dta">Expert-level dataset<span class="ext">.dta</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/combined_experts_2017.csv">Expert-level dataset<span class="ext">.csv</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2B2017%2BCodebook.pdf">Codebook<span class="ext">.pdf</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/Sample_Survey_CZ_2017.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_Ukraine_March_2024.dta">Dataset<span class="ext">.dta</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_Ukraine_March_2024.csv">Dataset<span class="ext">.csv</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2BUkraine%2BCodebook.pdf">Codebook<span class="ext">.pdf</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2BUkraine%2Bsurvey.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Polk, Jonathan, Jan Rovny, Ryan Bakker, Erica Edwards, Liesbet Hooghe, Seth Jolly, Jelle Koedam, Filip Kostelka, Gary Marks, Gijs Schumacher, Marco Steenbergen, Milada Anna Vachudova, and Marko Zilovic. 2017. "Explaining the salience of anti-elitism and reducing political corruption for political parties in Europe with the 2014 Chapel Hill Expert Survey data." <em>Research &amp; Politics</em> (January&ndash;March): 1&ndash;9.</p>
-        <p><span class="dataset-meta">Team:</span> PIs Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, Milada Anna Vachudova. Research assistance by David Attewell and Jelle Koedam.</p>
+        <p class="cite">When using the 2023 SPEED survey, please cite: Hooghe, Liesbet, Gary Marks, Ryan Bakker, Seth Jolly, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2024. "The Russian Threat and the Consolidation of the West: How Populism and EU-skepticism shape party support for Ukraine." <em>European Union Politics</em> 25.3.</p>
       </div>
+      
 
       <div class="dataset">
         <h3>2020 SPEED CHES &mdash; COVID-19</h3>
@@ -692,21 +697,23 @@ a.wave:hover::before { background: var(--blue); height: 1.15rem; }
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2BCovid%2BCodebook.pdf">Codebook<span class="ext">.pdf</span></a>
           <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/2020_Chapel_Hill_Expert_Survey_United_Kingdom_-_CovidUpdate.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Rovny, Jan, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Contesting Covid: The Ideological Bases of Partisan Responses to the Covid-19 Pandemic." <em>European Journal of Political Research</em>. <a href="https://doi.org/10.1111/1475-6765.12510">doi:10.1111/1475-6765.12510</a></p>
+        <p class="cite">When using the 2020 SPEED survey, please cite: Rovny, Jan, Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Marco Steenbergen, and Milada Anna Vachudova. 2022. "Contesting Covid: The Ideological Bases of Partisan Responses to the Covid-19 Pandemic." <em>European Journal of Political Research</em>. <a href="https://doi.org/10.1111/1475-6765.12510">doi:10.1111/1475-6765.12510</a></p>
       </div>
 
+
       <div class="dataset">
-        <h3>2023 SPEED CHES &mdash; Ukraine</h3>
-        <p class="dataset-meta">Fielded June 2023 &middot; 217 experts &middot; 274 parties &middot; 30 countries</p>
-        <p>Administered in June 2023 and completed by 217 political scientists specializing in political parties and European integration, this survey provides information about the positioning of 274 parties on policies related to the Russian invasion of Ukraine, along with general ideological positions. The survey covers political parties in 30 countries, including all European Union member states except Luxembourg and Cyprus, plus Iceland, Norway, Switzerland, Turkey, and the United Kingdom. The dataset adopts the country code and party id schema of the CHES trend file, with extensions for newly covered parties, so it can be merged with the trend file.</p>
+        <h3>2017 Chapel Hill Expert FLASH Survey</h3>
+        <p class="dataset-meta">Fielded Jan&ndash;Feb 2018, on 2017 positions &middot; reduced country set</p>
+        <p>Carried out in January and February 2018, asking about party positions in 2017. A reduced survey focusing on a smaller set of EU member states, asking the standard EU placement and economic/social positioning questions, plus the key issues facing Europe in 2017: EU economic coordination, populism, and migration.</p>
         <div class="files">
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_Ukraine_March_2024.dta">Dataset<span class="ext">.dta</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_Ukraine_March_2024.csv">Dataset<span class="ext">.csv</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2BUkraine%2BCodebook.pdf">Codebook<span class="ext">.pdf</span></a>
-          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2BUkraine%2Bsurvey.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_means_2017.dta">Dataset<span class="ext">.dta</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES_means_2017.csv">Dataset<span class="ext">.csv</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/combined_experts_2017.dta">Expert-level dataset<span class="ext">.dta</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/combined_experts_2017.csv">Expert-level dataset<span class="ext">.csv</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/CHES%2B2017%2BCodebook.pdf">Codebook<span class="ext">.pdf</span></a>
+          <a class="file" href="https://github.com/chesdata/chesdata.github.io/releases/download/ches-speed/Sample_Survey_CZ_2017.pdf">Sample questionnaire<span class="ext">.pdf</span></a>
         </div>
-        <p class="cite">Hooghe, Liesbet, Gary Marks, Ryan Bakker, Seth Jolly, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. 2024. "The Russian Threat and the Consolidation of the West: How Populism and EU-skepticism shape party support for Ukraine." <em>European Union Politics</em> 25.3.</p>
-        <p><span class="dataset-meta">Team:</span> Ryan Bakker, Liesbet Hooghe, Seth Jolly, Gary Marks, Jonathan Polk, Jan Rovny, Marco Steenbergen, and Milada Anna Vachudova. The CHES team gratefully acknowledges the research assistance of Courtney Blackington and funding from the Kenan and Burton Craige Chairs at UNC-Chapel Hill and ERC Grant #885026 TRANSNATIONAL at the EUI-Florence.</p>
+        <p class="cite">When using the 2017 survey, please cite: Polk, Jonathan, Jan Rovny, Ryan Bakker, Erica Edwards, Liesbet Hooghe, Seth Jolly, Jelle Koedam, Filip Kostelka, Gary Marks, Gijs Schumacher, Marco Steenbergen, Milada Anna Vachudova, and Marko Zilovic. 2017. "Explaining the salience of anti-elitism and reducing political corruption for political parties in Europe with the 2014 Chapel Hill Expert Survey data." <em>Research &amp; Politics</em> (January&ndash;March): 1&ndash;9.</p>
       </div>
 
     </div>

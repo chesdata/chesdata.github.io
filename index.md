@@ -7,7 +7,7 @@ permalink: /
 <section class="hero">
   <div class="wrap">
     <p class="label">Expert survey data on party positioning</p>
-    <h1>Where parties stand on the issues, measured again and again.</h1>
+    <h1>CHES: Where parties stand on the issues, measured again and again.</h1>
     <p class="lede">The Chapel Hill Expert Survey estimates the positions of national political parties on ideology and policy — in Europe since 1999, and now beyond it.</p>
 
     <div class="axis" id="waves">
@@ -33,30 +33,28 @@ permalink: /
           <span class="wave-year">2014</span>
           <span class="wave-meta">Europe</span>
         </a>
+        <a class="wave" href="{{ '/speed-ches/' | relative_url }}">
+          <span class="wave-year">2017</span>
+          <span class="wave-meta">SPEED<br>Europe</span>
+        </a>
         <a class="wave" href="{{ '/ches-europe/' | relative_url }}">
           <span class="wave-year">2019</span>
           <span class="wave-meta">Europe</span>
         </a>
-        <a class="wave" href="{{ '/ches-la/' | relative_url }}">
+        <div class="wave">
           <span class="wave-year">2020</span>
-          <span class="wave-meta">Latin<br>America</span>
-        </a>
-        <a class="wave" href="{{ '/speed-ches/' | relative_url }}">
-          <span class="wave-year">2020</span>
-          <span class="wave-meta">SPEED<br>Europe</span>
-        </a>
+          <a class="wave-meta" href="{{ '/ches-la/' | relative_url }}">Latin<br>America</a>
+          <a class="wave-meta" href="{{ '/speed-ches/' | relative_url }}">SPEED<br>Covid</a>
+        </div>
         <a class="wave" href="{{ '/ches-israel/' | relative_url }}">
           <span class="wave-year">2022</span>
           <span class="wave-meta">Israel</span>
         </a>
-        <a class="wave" href="{{ '/ches-canada/' | relative_url }}">
+        <div class="wave">
           <span class="wave-year">2023</span>
-          <span class="wave-meta">Canada</span>
-        </a>
-        <a class="wave" href="{{ '/speed-ches/' | relative_url }}">
-          <span class="wave-year">2023</span>
-          <span class="wave-meta">SPEED<br>Europe</span>
-        </a>
+          <a class="wave-meta" href="{{ '/ches-canada/' | relative_url }}">Canada</a>
+          <a class="wave-meta" href="{{ '/speed-ches/' | relative_url }}">SPEED<br>Ukraine</a>
+        </div>
         <a class="wave" href="{{ '/ches-europe/' | relative_url }}">
           <span class="wave-year">2024</span>
           <span class="wave-meta">Europe</span>
@@ -77,7 +75,7 @@ permalink: /
 
       <p><a href="{{ '/ches-la/' | relative_url }}">CHES-Latin America</a>, launched in 2020, provides comparable estimates for party positioning on ideology, policy issues, and international relations for 112 national parties in twelve Latin American countries, alongside some region-specific questions. CHES-LA also provides estimates for the position of presidents in these countries.</p>
       
-      <p>Since 2022, with the help of multiple CHES teams, we have added survey coverage in <a href="{{ '/ches-canada/' | relative_url }}">CHES-Canada</a>, <a href="{{ '/ches-israel/' | relative_url }}">CHES-Israel</a>, <a href="{{ '/ches-southasia/' | relative_url }}">CHES-South Asia</a>, and the <a href="{{ '/ches-usa/' | relative_url }}">CHES-USA</a>. Each survey covers country or region-specific issues, but also includes a common set of CHES questions.</p>
+      <p>Since 2022, with the help of multiple CHES teams, survey coverage has expanded to <a href="{{ '/ches-canada/' | relative_url }}">CHES-Canada</a>, <a href="{{ '/ches-israel/' | relative_url }}">CHES-Israel</a>, <a href="{{ '/ches-southasia/' | relative_url }}">CHES-South Asia</a>, and the <a href="{{ '/ches-usa/' | relative_url }}">CHES-USA</a>. Each survey covers country or region-specific issues, but also includes a common set of CHES questions.</p>
 
       
     </div>
@@ -109,7 +107,7 @@ permalink: /
           <p>Six federal parties plus nine provincial parties in Ontario and Quebec, 2023.</p>
           <span class="card-more">Data &amp; codebooks &nearr;</span>
         </a>
-        <a class="card" href="{{ '/ches-south-asia/' | relative_url }}">
+        <a class="card" href="{{ '/ches-southasia/' | relative_url }}">
           <h3>CHES-South Asia</h3>
           <p>In preparation.</p>
           <span class="card-more">Coming soon &nearr;</span>
