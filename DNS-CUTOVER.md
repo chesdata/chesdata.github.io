@@ -195,12 +195,22 @@ the `CNAME` file, push, look at `chesdata.github.io`, then put it back.
 Full inventory taken 7 August 2026 after the cutover. The zone had accumulated
 sixteen records; five of them do anything.
 
-## Never touch: the `NS` records
+## Never touch: the `NS` and `SOA` records
 
 ```
-chesdata.eu.  3600  IN  NS  ns17.domaincontrol.com.
-chesdata.eu.  3600  IN  NS  ns18.domaincontrol.com.
+chesdata.eu.  3600  IN  NS   ns17.domaincontrol.com.
+chesdata.eu.  3600  IN  NS   ns18.domaincontrol.com.
+chesdata.eu.   600  IN  SOA  ns17.domaincontrol.com. dns.jomax.net. 2026080707 28800 7200 604800 600
 ```
+
+The `SOA` is what makes the zone a zone: every zone has exactly one, at the
+apex, and GoDaddy creates and maintains it automatically. It names which of the
+two nameservers holds the master copy, GoDaddy's own admin address
+(`dns@jomax.net` — the first dot stands in for the `@`), a serial number that
+bumps on every save so the replica knows to re-sync, and GoDaddy's internal
+replication intervals. The only field with any visible effect is the last, the
+600-second negative TTL, which is how long resolvers remember that a record you
+deleted is gone. It cannot be deleted and there is no reason to edit it.
 
 These are not service records that went stale with Squarespace — they are the
 delegation itself, the `.eu` registry's statement of which servers may answer
@@ -290,8 +300,9 @@ weight.
 
 ## End state
 
-Two `NS`, four `A`, `www`, `_domainconnect`, and the two anti-spoofing `TXT`
-records. Ten records instead of sixteen, and every one of them doing something.
+The `SOA`, two `NS`, four `A`, `www`, `_domainconnect`, and the two
+anti-spoofing `TXT` records. Eleven records instead of seventeen, and every one
+of them doing something.
 
 ---
 
